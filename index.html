@@ -107,15 +107,23 @@ a:hover {
 }
 </style>
 
-  <link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico">
+<link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico">
 <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="favicon.ico">
 
-  
+
     <head>
     
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({ TeX: { extensions: ["autobold.js", "AMSsymbols.js"] } });
+</script>
+
+<script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
         <title>Scott Balchin</title>
     </head>
     
@@ -161,7 +169,7 @@ Publications
 
 <ul>
     <li> <b>S. Balchin</b> and J. P. C. Greenlees, "Adelic models of tensor-triangulated categories". 45pp. <i>To appear in Advances in Mathematics</i> (2020).
-    <li> <b>S. Balchin</b>, D. Bearup, C. Pech and C. Roitzheim, "Equivariant homotopy commutativity for $G=Cpqr$". 11pp. <i>To appear in Tbilisi Mathematical Journal</i> (2020).
+    <li> <b>S. Balchin</b>, D. Bearup, C. Pech and C. Roitzheim, "Equivariant homotopy commutativity for $G=C_{pqr}$". 11pp. <i>To appear in Tbilisi Mathematical Journal</i> (2020).
     <li> <b>S. Balchin</b> and F. Neumann, "On the number of rational points of classifying stacks for Chevalley group schemes". <i>Galois Covers, Grothendieck-Teichm&uuml;ller Theory and Dessins d'Enfants - Inter- actions between Geometry, Topology, Number Theory and Algebra, Springer Proceedings in Mathematics &amp; Statistics, Springer</i> (2020).
     <li> <b>S. Balchin</b> and R. Garner, "Bousfield localisation and colocalisation of one-dimensional model struc- tures", <i>Applied Categorical Structures</i>, Vol 27, no. 3, 1-21 (2019).
     <li> <b>S. Balchin</b>, "Three discrete models of planar Lie group equivariant presheaves", <i>Journal of Homotopy and Related Structures</i>, Vol 13, no. 3, 555-580 (2018).
@@ -177,6 +185,7 @@ Submitted
     <li> <b>S. Balchin</b>, "A Hanbook of Model Categories" 350pp (2020).
     <li> <b>S. Balchin</b>, D. Barnes and C. Roitzheim, "$N_\infty$-operads and associahedra" 18pp (2019).
 </ul>
+
 </div>
 <script>
 window.onscroll = function() {myFunction()};
