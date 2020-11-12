@@ -1,0 +1,573 @@
+<!DOCTYPE HTML>
+<html>
+
+<link href="//fonts.googleapis.com/css?family=Poiret+One" rel='stylesheet' type='text/css'>
+<link href="//fonts.googleapis.com/css?family=Roboto" rel='stylesheet' type='text/css'>
+
+
+<link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico">
+<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="favicon.ico">
+
+<link rel="stylesheet" href="style.css">
+
+
+<head>
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ['tex2jax.js'],
+    jax: ['input/TeX','output/HTML-CSS'],
+    TeX: {
+      extensions: ['AMSmath.js', 'AMSsymbols.js', '/static/XyJax/extensions/TeX/xypic.js'],
+      Macros: {
+        linebreak: ["", 1, ""],
+        },
+      TagSide: 'left'
+    },
+    tex2jax: {
+      inlineMath: [['$','$']],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+    },
+    'HTML-CSS': { scale: 100 }
+  });
+</script>
+
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js"></script>
+
+
+
+        <title>Scott Balchin</title>
+    </head>
+
+    <body>
+
+    <div class="hero-image2">
+    </div>
+
+<div id="navbar">
+  <a class="active" href="bifibrant.html">Lectures</a>
+  <a href="admin.html">Administrative</a>
+  <a href="index.html">Home</a>
+</div>
+
+<div class="content" style="padding-left: 60px; padding-right: 60px">
+
+  <h1 id="chapter-first">Lecture 1</h1>
+
+<h2 id="a0000000022" class="tex-section"><span data-tag="">1.1</span> Model Categories</h2>
+<p>
+<article class="env-definition" id="">
+  <p><a class="environment-identifier">Definition <span data-tag="">1.1.1</span>.</a> Given a commutative square of the following form: </p>
+  <div class="equation" id="0001">
+  <div>\begin{equation} \label{liftingdiagram} \begin{split}  \xymatrix{A \ar[r]^ f \ar[d]_ i&  X \ar[d]^ p \\  B \ar[r]_ g &  Y} \end{split} \end{equation}</div>
+</div>
+  <p> a <em>lift</em> in the diagram is a morphism $h \colon B \to X$ such that $hi=f$ and $ph=g$. A morphism $i \colon A \to B$ is said to have the <em>left lifting property</em> (LLP) with respect to another morphism $p \colon X \to Y$ and $p$ is said to have the <em>right lifting property</em> (RLP) with respect to $i$ if a lifting exists for any choice of $f$ and $g$ making the above diagram commute. </p>
+</article>
+</p>
+<p>
+<article class="env-definition" id="">
+  <p><a class="environment-identifier">Definition <span data-tag="">1.1.2</span>.</a> Let $f \colon X \to Y$ be a morphism in a category $\mathcal{C}$, then a <em>retraction</em> of $f$ is left-inverse. That is, there exists a morphism $r$ such that $r \circ f = \mathrm{id}_ X$. </p>
+</article>
+</p>
+<p>
+<article class="env-definition" id="0002">
+  <p><a class="environment-identifier">Definition <span data-tag="0002">1.1.3</span>.</a>  A <em>model category</em> is a category $\mathcal{C}$ with three distinguished classes of morphisms: </p>
+  <ul>
+  <li> Weak equivalences - $\mathrm{W}_\mathcal {C}$; </li>
+  <li> Fibrations - $\mathrm{Fib}_\mathcal {C}$;
+</li><li>
+Cofibrations - $\mathrm{Cof}_\mathcal {C}$;
+</li>
+</ul>
+   each of which is closed under composition. We say that a morphism which is both a fibration and a weak equivalence is an <em>acyclic fibration</em>, and dually a morphism which is both a cofibration and a weak equivalence is an <em>acyclic cofibration</em>. The distinguished classes of morphisms and the category $\mathcal{C}$ must satisfy the following axioms: </p>
+  <ul>
+  <li>
+(MC1) $\mathcal{C}$ has all small limits and colimits. In particular, there is an initial object $\emptyset $ and a terminal object $\ast $.
+
+</li><li>
+(MC2) If $f$ and $g$ are morphism such that $gf$ is defined and if two of $f$, $g$ and $gf$ are weak equivalences, then so is the third. That is, the weak equivalences satisfy the <em>2-out-of-3 property</em>.
+
+</li><li>(MC3) The three distinguished classes of morphisms are closed under retracts.
+
+</li><li>
+(MC4) Given a commutative diagram of the form above, a lift exists when either $i$ is a cofibration and $p$ is an acyclic fibration or when $i$ is an acyclic cofibration and $p$ is a fibration.
+
+</li><li>
+(MC5) Each morphism $f$ in $\mathcal{C}$ can be factored in two ways:
+<ol style="padding-top: 10px;">
+  <li>
+$f = pi$, where $i$ is a cofibration and $p$ is an acyclic fibration.
+</li><li>
+$f = pi$, where $p$ is a fibration and $i$ is an acyclic cofibration.
+</li>
+</ol>
+</li>
+</ul></p>
+</article>
+</p>
+<p>
+<article class="env-remark" id="0003">
+  <p><a class="environment-identifier">Remark <span data-tag="0003">1.1.4</span>.</a>  There are several important things that should be highlighted in regards to the definition of a model category. </p>
+  <p><ol>
+  <li>
+We shall assume throughout that our category has <em>all</em> small limits and colimits. It is, in fact, enough to just assume finite limits and colimits, and indeed this is the original definition of Quillen. However, the proofs that we will refer to for many result are taken from the book of Hovey&#160;<span class="cite">[Hov99]</span>, in which the existence of all small limits and colimits is assumed.
+</li><li>
+We assume, unless stated otherwise, that our model structures admit functorial factorizations. This allows us to pick the factorizations of axiom MC5 in a functorial way. Again, this is one of the assumptions made by Hovey&#160;<span class="cite">[Hov99]</span>, motived by work of Thomason&#160;<span class="cite">[Wei01]</span> and Dwyer-Hirschhorn-Kan-Smith&#160;<span class="cite">[DHKS04]</span> which makes various constructions more manageable. We refer to&#160;<span class="cite">[<span class="postnote">Definition 12.1.1</span>, Rie14]</span> or&#160;<span class="cite">[<span class="postnote">Definition 3.5</span>, BR13]</span> for a definition of what it means to have functorial factorization, which is akin to asking for a section of the functor $(d^1)^\ast \colon \mathcal{C}^{[3]} \to \mathcal{C}^{[2]}$ where $d^1 \colon [2] \to [3]$ is such that $1 \mapsto 1$ and $2 \mapsto 3$. Note that the definition of functorial factorization in&#160;<span class="cite">[<span class="postnote">Definition 1.1.1.2</span>, Hov99]</span> is not complete as discussed in&#160;<span class="cite">[MSE]</span>.
+</li><li>
+The data of weak equivalences, fibrations and cofibrations in a category $\mathcal{C}$ satisfying (MC2)-(MC5) is said to be the data of a <em>model structure</em> on $\mathcal{C}$. A category $\mathcal{C}$ may support a model structure while not actually forming a model category (e.g., if $\mathcal{C}$ fails to have a terminal object).
+</li><li>
+Finally, we note that in many sources, including&#160;<span class="cite">[Hov99]</span>, one will find the word <em>trivial</em> used instead of <em>acyclic</em>. We have chosen to work with the latter as a personal preference.
+</li>
+</ol></p>
+</article>
+</p>
+<p>
+<article class="env-definition" id="">
+  <p><a class="environment-identifier">Definition <span data-tag="">1.1.5</span>.</a> Let $\mathcal{C}$ be a model category. An object $X \in \mathcal{C}$ is said to be: </p>
+  <p><ul>
+  <li>
+<em>fibrant</em> if the unique morphism $X \to \ast $ is a fibration;
+
+</li><li>
+<em>cofibrant</em> is the unique morphism $\emptyset \to X$ is a cofibration;
+
+</li><li>
+<em>bifibrant</em> if it is both fibrant and cofibrant.
+</li>
+</ul></p>
+</article>
+</p>
+<p>
+Using the factorizations of morphisms given in MC5 it is possible to find fibrant and cofibrant replacements for any object in a model category by factoring the unique morphisms $X \to \ast $ and $\emptyset \to X$ respectively.
+</p>
+<p>
+<article class="env-definition" id="">
+  <p><a class="environment-identifier">Definition <span data-tag="">1.1.6</span>.</a> Let $\mathcal{C}$ be a model category and $X \in \mathcal{C}$. </p>
+  <p><ul>
+  <li>
+A <em>fibrant replacement</em> of $X$ is an object $RX$ equipped with an acyclic cofibration $X \to RX$ such that $RX$ is fibrant.
+</li><li>
+A <em>cofibrant replacement</em> of $X$ is an object $QX$ along with an acyclic fibration $QX \to X$ such that $QX$ is cofibrant.
+</li>
+</ul></p>
+</article>
+</p>
+<p>
+Note that although many such replacements may exist, we are given one such replacement that is functorial by assumption.
+</p>
+<p>
+<article class="env-remark" id="">
+  <p><a class="environment-identifier">Remark <span data-tag="">1.1.7</span>.</a> We highlight that the fibrant replacement of a cofibrant object, that is, $RQX$ is still a cofibrant object, and dually the object $QRX$ is still fibrant. As such there is a notion of a <em>bifibrant replacement</em> as the composite, and there is a weak equivalence $RQX \xrightarrow {\sim } QRX$&#160;<span class="cite">[<span class="postnote">3.3</span>, Rie19]</span>. </p>
+</article>
+</p>
+<p>
+<article class="env-proposition" id="0004">
+  <p><a class="environment-identifier">Proposition <span data-tag="0004">1.1.8</span> <span class="named"></span>(<span class="cite">[<span class="postnote">Corollary 1.2</span>, Qui69]</span>).</a>  The class of cofibrations are the morphisms which have the LLP with respect to all acyclic fibrations. Dually, the fibrations are the morphisms which have the RLP with respect to all acyclic cofibrations. </p>
+</article>
+</p>
+<p>
+<article class="env-corollary" id="">
+  <p><a class="environment-identifier">Corollary <span data-tag="">1.1.9</span>.</a> The class of fibrations (resp., cofibrations) is closed under pullbacks (resp., pushouts). </p>
+</article>
+</p>
+<p>
+<article class="env-corollary" id="">
+  <p><a class="environment-identifier">Corollary <span data-tag="">1.1.10</span>.</a> A morphism $f \colon X \to Y$ is in all three classes of distinguished morphisms if and only if it is an isomorphism. </p>
+</article>
+</p>
+<p>
+The above proposition tells us that after the weak equivalences have been defined, we can use the fibrations (resp., cofibrations) to construct the cofibrations (resp., fibrations) via liftings. That is, the weak equivalences along with one of the other classes of morphisms is enough to uniquely determine a model structure.
+</p>
+<p>
+There is an enlightening discussion on MathOverflow entitled "<em>What determines a model structure?</em>" which explores other collections of incomplete data which are enough to uniquely determine a model structure. We summarize some of the results from this discussion here. The proof of the following result uses the useful fact that any weak equivalence can be written as a composite of an acyclic cofibration and an acyclic fibration using the factorization axiom.
+</p>
+<p>
+<article class="env-proposition" id="">
+  <p><a class="environment-identifier">Proposition <span data-tag="">1.1.11</span> <span class="named">(<span class="cite">[<span class="postnote">Proposition 1.37</span>, Joy]</span>)</span>.</a>  A model structure is uniquely determined by the data of: </p>
+  <p><ul>
+  <li>
+Cofibrations and fibrant objects.
+</li><li>
+Fibrations and cofibrant objects.
+</li><li>
+Fibrations and cofibrations.
+</li><li>
+Acyclic fibrations and acyclic cofibrations.
+</li>
+</ul></p>
+</article>
+</p>
+<p>
+Conversely, the following data does <em>not</em> uniquely describe a model structure:
+</p>
+<ul>
+  <li>
+Weak equivalences.
+</li><li>
+Cofibrant objects and weak equivalences.
+</li><li>
+Fibrant objects and weak equivalences.
+</li><li>
+Fibrant objects and cofibrant objects.
+</li>
+</ul>
+<h2 id="a0000000014" class="tex-section"><span data-tag="">1.2</span> The Homotopy Category</h2>
+<p>
+The homotopy category is the category that one obtains by formally inverting the weak equivalences in a model category. This allows us to then consider objects up to some notion of homotopy, akin to the classical cases of topological spaces.
+</p>
+<p>
+In particular, given a model category $\mathcal{C}$ the <em>homotopy category</em> will be a (1-)category $\operatorname {Ho}(\mathcal{C})$ equipped with a functor $\gamma \colon \mathcal{C} \to \operatorname {Ho}(\mathcal{C})$ which is universal among functors which sends $\operatorname {W}_\mathcal {C}$ to isomorphisms. The highly structured nature of model categories allows this process to be done in a controlled manner. First we need to discuss the notion of homotopy in model categories
+</p>
+<p>
+<article class="env-definition" id="0005">
+  <p><a class="environment-identifier">Definition <span data-tag="0005">1.2.1</span>.</a>  Let $\mathcal{C}$ be a model category and $X \in \mathcal{C}$. A <em>cylinder object</em> $\operatorname {Cyl}(X)$ for $X$ is a factorization of the codiagonal $\nabla _ X \colon X \sqcup X \to X$ as </p>
+  <div class="equation">
+  \[ \nabla _ X \colon X \sqcup X \xrightarrow {(i_0,i_1) \in \operatorname {Cof}_\mathcal {C}} \operatorname {Cyl}(X) \xrightarrow {p \in \operatorname {W}_\mathcal {C}} X. \]
+</div>
+  <p> Note that such a factorization exists by MC5. </p>
+</article>
+</p>
+<p>
+<article class="env-definition" id="">
+  <p><a class="environment-identifier">Definition <span data-tag="">1.2.2</span>.</a> Let $f,g \colon X \to Y$ be a pair of morphisms in a model category. Then a <em>left homotopy</em> $\eta \colon f \sim _ L g$ is a morphism $\eta \colon \operatorname {Cyl}(X) \to Y$ which makes the following diagram commute: </p>
+  <div class="equation">
+\[ \xymatrix{ X \ar[dr]_f \ar[r]^-{i_0} &  \operatorname{Cyl}(X) \ar[d]^\eta \ar@{<-}[r]^-{i_1} &   X \ar[dl]^g \\  &  Y } \]
+</div>
+</article>
+</p>
+<p>
+We can also consider a dual notion of path objects constructed out of fibration data.
+</p>
+<p>
+<article class="env-definition" id="0006">
+  <p><a class="environment-identifier">Definition <span data-tag="0006">1.2.3</span>.</a>  Let $\mathcal{C}$ be a model category and $X \in \mathcal{C}$. A <em>path object</em> $\operatorname {Path}(X)$ for $X$ is a factorization of the diagonal $\Delta _ X \colon X\to X \times X$ as </p>
+  <div class="equation">
+  \[ \Delta _ X \colon X \xrightarrow {s \in \operatorname {W}_\mathcal {C}} \operatorname {Path}(X) \xrightarrow {(d_0,d_1) \in \operatorname {Fib}_\mathcal {C}} X \times X . \]
+</div>
+  <p> Note that such a factorization exists by MC5 </p>
+</article>
+</p>
+<p>
+<article class="env-definition" id="">
+  <p><a class="environment-identifier">Definition <span data-tag="">1.2.4</span>.</a> Let $f,g \colon X \to Y$ be a pair of morphisms in a model category. Then a <em>right homotopy</em> $\eta \colon f \sim _ R g$ is a morphism $\eta \colon X \to \operatorname {Path}(Y)$ which makes the following diagram commute: </p>
+  <div class="equation">
+  \[ \xymatrix{ &  X \ar[d]^{\eta } \ar[dl]_{f} \ar[dr]^{g} \\  Y &  \operatorname {Path}(Y) \ar[r]_-{d_1} \ar[l]^-{d_0} &  Y } \]
+</div>
+</article>
+</p>
+<p>
+<article class="env-definition" id="">
+  <p><a class="environment-identifier">Definition <span data-tag="">1.2.5</span>.</a> </p>
+  <p><ol>
+  <li>
+A pair of morphisms $f,g \colon X \to Y$ in a model category are <em>homotopic</em>, written $f \sim g$ if they are both left and right homotopic.
+
+</li><li>
+A morphism $f \colon X \to Y$ in a model category is a <em>homotopy equivalence</em> is there is a morphism $h \colon Y \to X$ such that $hf \sim \mathrm{id}_ X$ and $fh \sim \mathrm{id}_ Y$.
+
+</li>
+</ol></p>
+</article>
+</p>
+<p>
+The key feature of this discussion is that the notion of being homotopic is particularly nice in the case that the objects in question have good (co)fibrancy conditions.
+</p>
+<p>
+<article class="env-lemma" id="">
+  <p><a class="environment-identifier">Lemma <span data-tag="">1.2.6</span> <span class="named">(<span class="cite">[<span class="postnote">Corollary 1.2.6</span>, Hov99]</span>)</span>.</a>  Let $\mathcal{C}$ be a model category and $X,Y \in \mathcal{C}$. The property of being left (resp., right) homotopic is an equivalence relation on $\operatorname {Hom}(X,Y)$ for $X$ cofibrant and $Y$ fibrant and moreover the two notions coincide. </p>
+</article>
+</p>
+<p>
+<article class="env-proposition" id="">
+  <p><a class="environment-identifier">Proposition <span data-tag="">1.2.7</span> <span class="named">(<span class="cite">[<span class="postnote">Proposition 1.2.8</span>, Hov99]</span>)</span>.</a>  Let $\mathcal{C}$ be a model category, denote by $\mathcal{C}_{cf}$ the full subcategory of bifibrant objects. A morphism in $\mathcal{C}_{cf}$ is a weak equivalence if and only if it is a homotopy equivalence. </p>
+</article>
+</p>
+<p>
+As we have seen that the homotopy relation is an equivalence relation on the morphisms when we restrict to the subcategory of bifibrant objects, and moreover it is compatible with composition, we can form the category $\mathcal{C}_{cf}/\sim $. This category is one of the fundamental objects in the theory of model categories.
+</p>
+<p>
+<article class="env-definition" id="">
+  <p><a class="environment-identifier">Definition <span data-tag="">1.2.8</span>.</a> Let $\mathcal{C}$ be a model category. Then its <em>homotopy category</em> $\operatorname {Ho}(\mathcal{C})$, up to equivalence of categories, is the category whose </p>
+  <p><ul>
+  <li>
+objects are the objects of $\mathcal{C}_{cf}$;
+</li><li>
+morphisms are the homotopy classes of morphisms in $\mathcal{C}$. That is, the equivalence class of morphisms under homotopy.
+</li>
+</ul></p>
+</article>
+</p>
+<p>
+Recall from the introduction that the overall goal is to construct the object $\mathcal{C}[W^{-1}]$ in such a way that we do not run into size issues. The following result tells us that the homotopy category as defined above is equivalent as a category to $\mathcal{C}[W^{-1}]$. It will therefore follow that $\mathcal{C}[W^{-1}]$ forms a category whenever $\mathcal{C}$ is a model category. Before we continue, let us give a formal definition of the object $\mathcal{C}[W^{-1}]$.
+</p>
+<p>
+<article class="env-definition" id="0007">
+  <p><a class="environment-identifier">Definition <span data-tag="0007">1.2.9</span>.</a>  Let $\mathcal{C}$ be a category equipped with a class of weak equivalences. The object $\mathcal{C}[W^{-1}]$ is constructed in the following fashion. Begin by forming the free category $F(\mathcal{C},W^{-1})$ on the morphisms of $\mathcal{C}$ and the reversals of the morphisms of $W$. In particular an object of $F(\mathcal{C},W^{-1})$ is an object of $\mathcal{C}$ and a morphism is a finite string of composable morphisms $(f_1, f_2, \dots , f_ n)$ where $f_ i$ is either a morphism of $\mathcal{C}$ or the reversal $w_ i^{-1}$ of a morphism $w_ i \in W$. The empty string at a particular object plays the role of the identity at that object, and the composition is given by concatenation of strings. </p>
+  <p>One then defines $\mathcal{C}[W^{-1}]$ to be the quotient category of $F(\mathcal{C},W^{-1})$ by the following relations: </p>
+  <p><ul>
+  <li>
+$\operatorname {id}_ A = (\operatorname {id}_ A)$ for all objects $A$;
+</li><li>
+$(f,g) = (g \circ f)$ for all composable morphisms $f,g$ of $\mathcal{C}$;
+</li><li>
+$\operatorname {id}_{\operatorname {dom}w} = (w,w^{-1})$ for all $w \in W$;
+</li><li>
+$\operatorname {id}_{\operatorname {codom}w} = (w^{-1},w)$ for all $w \in W$.
+</li>
+</ul></p>
+</article>
+</p>
+<p>
+Note that <em>a priori</em> $\mathcal{C}[W^{-1}]$ need not be a category as one may need to use zig-zags of arbitrary length and as such the hom-objects need not be sets. The following theorem should be thought of as the <em>fundamental theorem of model categories</em>, it tells us that if $\mathcal{C}$ is a model category and $W$ is the class of weak equivalences, then $\mathcal{C}[W^{-1}]$ is in fact a category.
+</p>
+<p>
+<article class="env-theorem" id="0008">
+  <p><a class="environment-identifier">Theorem <span data-tag="0008">1.2.10</span> <span class="named">(<span class="cite">[<span class="postnote">Theorem 1.2.10</span>, Hov99]</span>)</span>.</a>  Let $\mathcal{C}$ be a model category, and $\gamma \colon \mathcal{C} \to \mathcal{C}[W^{-1}]$ the canonical functor. </p>
+  <p><ul>
+  <li>
+The inclusion $\mathcal{C}_{cf} \to \mathcal{C}$ induces an equivalence of categories $\operatorname {Ho}(\mathcal{C}) \simeq \mathcal{C}[W^{-1}]$ given by $\operatorname {Ho}(\mathcal{C}) \xrightarrow {\cong } \mathcal{C}_{cf}[W^{-1}] \to \mathcal{C}[W^{-1}] $.
+</li><li>
+There are natural isomorphisms
+<div class="equation">
+  \begin{align*}  \operatorname {Hom}_\mathcal {C}(QRX, QRY)/\sim \,  &  \cong \operatorname {Hom}_{\mathcal{C}[W^{-1}]}(\gamma X , \gamma Y) \\[5pt]&  \cong \operatorname {Hom}_\mathcal {C}(RQX, RQY)/\sim \,  := [X,Y] \end{align*}
+</div>
+ where $Q$ and $R$ are the cofibrant and fibrant replacement functors respectively. In particular, $\mathcal{C}[W^{-1}]$ is a category without moving to a higher universe and zig-zags of length at most three are all that are needed.
+</li><li>
+The functor $\gamma \colon \mathcal{C} \to \mathcal{C}[W^{-1}]$ identifies left or right homotopic morphisms.
+</li><li>
+If $f \colon A \to B$ is a morphism in $\mathcal{C}$ such that $\gamma f$ is an isomorphism in $\mathcal{C}[W^{-1}]$ then $f$ is a weak equivalence.
+</li>
+</ul></p>
+</article>
+</p>
+<p>
+Note that this theorem provides us with two equivalent ways of thinking about the homotopy category of a model category. On the one hand we can identify it with the subcategory of bifibrant objects with homotopy classes of morphismss, or we can alternatively see it as the category with the same objects as $\mathcal{C}$ where we have formally inverted the weak equivalences.
+</p>
+<p>
+<article class="env-remark" id="">
+  <p><a class="environment-identifier">Remark <span data-tag="">1.2.11</span>.</a> The above theorem tells us that when forming $\mathcal{C}[W^{-1}]$ one needs zig-zags of length at most three. Explicitly, these zig-zags are of the form </p>
+  <div class="equation">
+  \[ X \leftarrow QX \xrightarrow {f} RY \leftarrow Y. \]
+</div>
+</article>
+</p>
+<h2 id="a0000000003" class="tex-section"><span data-tag="">1.3</span> Examples</h2>
+<h3 id="a0000000011" class="tex-subsection"><span data-tag="">1.3.1</span> The Quillen model structure on $\textbf{Top}$</h3>
+<p>
+<article class="env-definition" id="">
+  <p><a class="environment-identifier">Definition <span data-tag="">1.3.2</span>.</a> A map $f \colon X \to Y$ of topological spaces is said to be a <em>weak homotopy equivalence</em> if for each point $x \in X$ the map $f_\ast \colon \pi _ n (X,x) \to \pi _ n(Y,f(x))$ is a bijection of pointed sets for $n=0$, and an isomorphism of groups for $n \geq 1$. </p>
+</article>
+</p>
+<p>
+<article class="env-definition" id="">
+  <p><a class="environment-identifier">Definition <span data-tag="">1.3.3</span>.</a> A map $f \colon X \to Y$ of topological spaces is a <em>Serre fibration</em> if for each CW-complex $A$, the map $f$ has the RLP with respect to the inclusion $A \times 0 \to A \times [0,1]$. </p>
+</article>
+</p>
+<p>
+<article class="env-proposition" id="0009">
+  <p><a class="environment-identifier">Proposition <span data-tag="0009">1.3.4</span> <span class="named">(<span class="cite">[<span class="postnote">Theorem 2.4.19</span>, Hov99]</span>)</span>.</a>  There is a model structure on the category $\textbf{Top}$ where a map $f \colon X \to Y$ is a: </p>
+  <p><ul>
+  <li>
+weak equivalence if it is a weak homotopy equivalence;
+</li><li>
+fibration if it is a Serre fibration;
+</li><li>
+cofibration if it has the LLP with respect to all acyclic fibrations.
+</li>
+</ul></p>
+  <p> We will call this the <em>Quillen model structure</em> and denote it $\textbf{Top}_{\mathrm{Quillen}}$. All objects in this model structure are fibrant and the cofibrant objects are the CW-complexes. </p>
+</article>
+</p>
+<p>
+The homotopy category $\operatorname {Ho}(\textbf{Top}_\mathrm {Quillen})$ is the usual homotopy category, sometimes denoted $\textbf{hTop}$.
+</p>
+<h3 id="a0000000010" class="tex-subsection"><span data-tag="">1.3.5</span> The projective model structure on $\textbf{Ch}(R)$</h3>
+<p>
+<article class="env-proposition" id="000A">
+  <p><a class="environment-identifier">Proposition <span data-tag="000A">1.3.6</span> <span class="named">(<span class="cite">[<span class="postnote">Theorem 2.3.11</span>, Hov99]</span>)</span>.</a>  Let $R$ be a ring. Then there is a model structure on $\textbf{Ch}(R)$ where a morphism $f \colon X \to Y$ is a: </p>
+  <p><ul>
+  <li>
+weak equivalence if it is a quasi-isomorphism;
+</li><li>
+fibration if it is a degreewise epimorphism;
+</li><li>
+cofibration if it is a degreewise split injection with cofibrant cokernel.
+</li>
+</ul></p>
+  <p> We will call this the <em>projective model structure</em> and denote it $\textbf{Ch}(R)_\mathrm {proj}$. All objects are fibrant in this model structure. The cofibrant objects are those complexes which can be written as an increasing union of complexes such that the associated quotients are complexes of projectives with zero differential. </p>
+</article>
+</p>
+<p>
+The homotopy category of $\textbf{Ch}(R)_\mathrm {proj}$ goes by the name of the <em>derived category of $R$</em> and is denoted $\textbf{D}(R)$.
+</p>
+<h3 id="a0000000007" class="tex-subsection"><span data-tag="">1.3.7</span> The natural model structure on $\textbf{Cat}$</h3>
+<p>
+<article class="env-definition" id="">
+  <p><a class="environment-identifier">Definition <span data-tag="">1.3.8</span>.</a> <ul>
+  <li>
+A functor $F \colon \mathcal{C} \to \mathcal{D}$ is an <em>equivalence</em> if it is fully faithful and essentially surjective.
+</li><li>
+A functor $F \colon \mathcal{C} \to \mathcal{D}$ is an <em>isofibration</em> for all $c \in \mathcal{C}$ and any isomorphism $\phi \colon F(c) \cong d$, there exists an isomorphism $\psi \colon c \cong c'$ such that $F(\psi ) = \phi $.
+</li>
+</ul></p>
+</article>
+</p>
+<p>
+<article class="env-proposition" id="">
+  <p><a class="environment-identifier">Proposition <span data-tag="">1.3.9</span> <span class="named">(<span class="cite">[<span class="postnote">Theorem 3.1</span>, Rez10]</span>)</span>.</a>  There is a model structure on $\textbf{Cat}$ such that a functor $F \colon \mathcal{C} \to \mathcal{D}$ is a: </p>
+  <p><ul>
+  <li>
+weak equivalence if it is an equivalence;
+</li><li>
+fibration if it is an isofibration;
+</li><li>
+cofibration if the induced morphism $\operatorname {ob}F \colon \operatorname {ob}\mathcal{C} \to \operatorname {ob} \mathcal{D}$ is injective.
+</li>
+</ul></p>
+  <p> We will call this the <em>natural model structure</em> and denote it $\textbf{Cat}_\mathrm {Nat}$. All objects in this model structure are bifibrant. </p>
+</article>
+</p>
+<h3 id="a0000000004" class="tex-subsection"><span data-tag="">1.3.10</span> Trivial model structures</h3>
+<p>
+<article class="env-proposition" id="">
+  <p><a class="environment-identifier">Proposition <span data-tag="">1.3.11</span> <span class="named">(<span class="cite">[<span class="postnote">Example 1.1.5</span>, Hov99]</span>)</span>.</a>  Let $\mathcal{C}$ be a category with all small limits and colimits. Then there is a proper model structure on $\mathcal{C}$ where a morphism $f \colon X \to Y$ is a: </p>
+  <p><ul>
+  <li>
+weak equivalence if it is an isomorphism;
+</li><li>
+fibration if it is any morphism;
+</li><li>
+cofibration if it is any morphism.
+</li>
+</ul></p>
+  <p> We will call this the <em>trivial model structure</em> and denote it $\mathcal{C}_{\mathrm{triv}}$. All objects in this model structure are bifibrant. </p>
+</article>
+</p>
+<p>
+In this case, from the universal property of the homotopy category, we have that $\operatorname {Ho}(\mathcal{C}) \cong \mathcal{C}$ as we are only inverting those morphisms which are already invertible.
+</p>
+<p>
+In fact, the trivial model structure is one in a collection of three model structures which exist on a category $\mathcal{C}$ which possesses all small limits and colimits. One simply sets one of the three distinguished classes of morphisms to be the isomorphisms and then the other two are any morphisms of $\mathcal{C}$.
+</p>
+<p>
+<article class="env-proposition" id="">
+  <p><a class="environment-identifier">Proposition <span data-tag="">1.3.12</span> <span class="named">(<span class="cite">[<span class="postnote">Example 1.1.5</span>, Hov99]</span>)</span>.</a>  Let $\mathcal{C}$ be a category with all small limits and colimits. Then there is a model structure on $\mathcal{C}$ where a morphism $f \colon X \to Y$ is a: </p>
+  <p><ul>
+  <li>
+weak equivalence if it is any morphism;
+</li><li>
+fibration if it is an isomorphism (resp., any morphism);
+</li><li>
+cofibration if it is any morphism (resp., an isomorphism).
+</li>
+</ul></p>
+  <p> We will call this the <em>fibration iso-model structure</em> (resp., <em>cofibration iso-model structure</em>) and denote it $\mathcal{C}_\mathrm {fib}$ (resp., $\mathcal{C}_\mathrm {cof}$). In the fibration case only the terminal object is bifibrant, while in the cofibration case only the initial object is bifibrant. As such, in both cases, the homotopy category all objects become isomorphic. </p>
+</article>
+</p>
+<h2 id="a0000000001" class="tex-section"><span data-tag="">1.4</span> Things of Note</h2>
+<p>
+<article class="env-remark" id="">
+  <p><a class="environment-identifier">Remark <span data-tag="">1.4.1</span>.</a> Recall that the framework of model categories is set up so that one can invert certain morphisms by taking the homotopy category. One can sometimes forget the fact that the property of being a weak equivalence is not a symmetric relation. </p>
+  <p>We define the <em>pseudocircle</em> $\mathbb {S}$ to be the (non-Hausdorff) topological space whose underlying set is the quadruple $\{ x_1, x_2, x_3, x_4\} $ and whose open subsets are </p>
+  <div class="equation">
+  \[ \{  \{ x_1, x_2, x_3, x_4\}  , \{ x_1, x_2, x_3\}  , \{ x_1, x_2, x_4\} , \{ x_1, x_2\} , \{ x_1\} , \{ x_2\} , \emptyset \} . \]
+</div>
+  <p> There is a function of sets $f \colon S^1 \to \mathbb {S}$ which is defined by sending: </p>
+  <p><ul>
+  <li>
+a point in the open left half of $S^1$ to the point $x_1$;
+</li><li>
+a point in the open right half of $S^1$ to the point $x_2$;
+</li><li>
+the top point of $S^1$ to $x_3$;
+</li><li>
+the bottom point of $S^1$ to $x_4$.
+</li>
+</ul></p>
+  <p> This function is a continuous function which is also a weak homotopy equivalence. However, the only continuous functions in the reverse direction are the constant maps which must induce the trivial map of $\pi _1$&#160;<span class="cite">[McC66]</span>. </p>
+</article>
+</p>
+<p>
+<article class="env-remark" id="000B">
+
+  <p><a class="environment-identifier">Remark <span data-tag="000B">1.4.2</span>.</a> Although a model category $\mathcal{C}$ has all small limits and colimits, it is rare for $\operatorname {Ho}(\mathcal{C})$ to be both complete and cocomplete. However, it is true that $\operatorname {Ho}(\mathcal{C})$ has all small products and coproducts as remarked in&#160;<span class="cite">[<span class="postnote">Example 1.3.11</span>, Hov99]</span>. </p>
+  <p>Here we will give an explicit example in $\operatorname {Ho}(\textbf{Top}_{\mathrm{Quillen}})$ of a pushout which does not exist. </p>
+  <p>We let $S^1 = \{  z \in \mathbb {C} \mid |z| = 1\} $ and consider the span </p>
+  <div class="equation">
+  \[ \xymatrix{ S^1 \ar[r]^ f \ar[d]&  S^1 \\  \ast &  } \]
+</div>
+  <p> where $f(z) = z^2$. We assume that the pushout $P$ of the diagram exists. If such a $P$ exists, there would be a natural isomorphism $[P,X] = \operatorname {Hom}(\mathbb {Z}/2 , \pi _1(X))$. </p>
+  <p>Now, note that there is a fibration </p>
+  <div class="equation">
+  \[ S^1 = B \mathbb {Z} \xrightarrow {f} S^1 \to \mathbb {R}P^\infty = B(\mathbb {Z}/2) \to \mathbb {C}P^\infty = BS^1 \xrightarrow {Bf} \mathbb {C}P^\infty  \]
+</div>
+  <p> which gives an exact sequence </p>
+  <div class="equation">
+  \[ [P,S^1] \to [P, \mathbb {R}P^\infty ] \to [P, \mathbb {C}P^\infty ]. \]
+</div>
+  <p> We of course know that $\pi _1(S^1) = \mathbb {Z}$, $\pi _1(\mathbb {R}P^\infty )= \mathbb {Z}/2$ and $\pi _1(\mathbb {C}P^\infty ) = 0$. Therefore if $[P,X] = \operatorname {Hom}(\mathbb {Z}/2 , \pi _1(X))$ then we have an exact sequence $0 \to \mathbb {Z}/2 \to 0$ which is impossible. As such, $P$ does not exist. </p>
+  <p>More examples and further discussion of this particular example can be found at&#160;<span class="cite">[MOFa,MOFb]</span>. </p>
+</article>
+</p>
+
+<h2 id="a0000000025" class="tex-section"><span data-tag="">1.5</span> References for Lecture 1</h2>
+
+<span class="cite">[BR13]</span> Tobias  Barthel  and  Emily  Riehl.    On  the  construction  of  functorial  factorizations  for  model  categories. <i>Algebr.  Geom.  Topol.</i>, 13(2):1089-1124, 2013.
+<br><br>
+
+<span class="cite">[DHKS04]</span>  William G. Dwyer,  Philip S. Hirschhorn,  Daniel M. Kan,  and Jeffrey  H.  Smith. Homotopy  limit  functors  on  model  categories  and homotopical  categories,  volume  113  of <i>Mathematical  Surveys  and Monographs</i>. American Mathematical Society, Providence, RI, 2004.
+<br><br>
+
+<span class="cite">[Hov99]</span> Mark Hovey. Model  categories, volume 63 of <i>Mathematical  Surveys and  Monographs</i>.  American Mathematical Society, Providence, RI,1999.
+<br><br>
+
+<span class="cite">[Joy]</span> Andre Joyal.  <a href="https://ncatlab.org/joyalscatlab/published/Model+categories"> Joyal's CatLab</a>.
+<br><br>
+
+<span class="cite">[McC66]</span> Michael C. McCord. Singular homology groups and homotopy groups of finite topological spaces. <i>Duke Math. J.</i>, 33:465-474, 1966.
+<br><br>
+
+<span class="cite">[MOFa]</span> <a href="https://mathoverflow.net/questions/10364/categorical-homotopy-colimits">Categorical homotopy colimits</a>.  MathOverflow.
+<br><br>
+
+<span class="cite">[MOFb]</span> <a href="https://mathoverflow.net/questions/239383/the-homotopy-category-is-not-complete-nor-cocomplete">The  homotopy  category  is  not  complete  nor  cocomplete</a>. MathOverflow.
+<br><br>
+
+<span class="cite">[MSE]</span> <a href="https://math.stackexchange.com/questions/1179279/how-was-the-functorial-factorization-axiom-frequently-misstated">How was the functorial factorization axiom "frequently misstated"?</a>  Mathematics Stack Exchange.
+<br><br>
+
+<span class="cite">[Qui69]</span> Daniel G. Quillen.  Rational homotopy theory. <i>Ann.  of  Math.</i>  (2),90:205-295, 1969.
+<br><br>
+
+<span class="cite">[Rez10]</span> Charles  Rezk. <a href="https://faculty.math.illinois.edu/~rezk/papers.html">A  model  category  for  categories</a>,   2010. Unpublished  notes.
+<br><br>
+
+<span class="cite">[Rie14]</span> Emily Riehl. Categorical homotopy theory, volume 24 of <i>New Mathematical Monographs</i>. Cambridge University Press, Cambridge, 2014.
+<br><br>
+<span class="cite">[Rie19]</span> Emily  Riehl.   Homotopical  categories:   From  model  categories  to ($\infty$,1)-categories. arXiv:1904.00886v3, 2019.
+<br><br>
+
+<span class="cite">[Wei01]</span> Charles  Weibel.   Homotopy  ends  and  Thomason  model  categories. <i>Selecta Math. (N.S.)</i>, 7(4):533-564, 2001
+
+</div>
+
+<script>
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>
+
+    </body>
+</html>
+
+
