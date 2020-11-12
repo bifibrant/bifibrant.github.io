@@ -81,6 +81,7 @@ li {padding-bottom:15px;}
 #navbar {
   overflow: hidden;
   background-color: #161925;
+  z-index: 1;
 }
 
 #navbar a:hover {
@@ -133,4 +134,15 @@ a:hover {
   color: #C1292E;
   background-color: transparent;
   text-decoration: underline;
+}
+
+
+.environment-identifier{
+    text-decoration: bold;
+    color: #C1292E;
+}
+
+span.cite{
+    text-decoration: bold;
+    color: #2A7E00;
 }
