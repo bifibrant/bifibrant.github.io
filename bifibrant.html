@@ -13,17 +13,30 @@
 
 <head>
     
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
-</script>
 
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({ TeX: { extensions: ["autobold.js", "AMSsymbols.js"] } });
+  MathJax.Hub.Config({
+    extensions: ['tex2jax.js'],
+    jax: ['input/TeX','output/HTML-CSS'],
+    TeX: {
+      extensions: ['AMSmath.js', 'AMSsymbols.js', '/static/XyJax/extensions/TeX/xypic.js'],
+      Macros: {
+        linebreak: ["", 1, ""],
+        },
+      TagSide: 'left'
+    },
+    tex2jax: {
+      inlineMath: [['$','$']],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+    },
+    'HTML-CSS': { scale: 100 }
+  });
 </script>
 
-<script type="text/javascript"
-    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js"></script>
+
+
+
         <title>Scott Balchin</title>
     </head>
     
@@ -33,17 +46,23 @@
     </div>
     
 <div id="navbar">
-  <a class="active" href="bifibrant.html">Bifibrant</a>
+  <a class="active" href="bifibrant.html">Lectures</a>
   <a href="admin.html">Administrative</a>
   <a href="index.html">Home</a>
 </div>
 
-<div class="content">
+<div class="content" style="padding-left: 60px; padding-right: 60px">
+<br>
 
-<h1 style="text-align:center; color:#C1292E">
-&#128679; Under construction &#128679;
-</h1>
+<br>
 
+Lecture notes for the lecture series "Model Categories by Example" held online in November 2020. Recordings of the lectures along with slides will eventually appear here. Lecture notes genered in part using <a href="https://github.com/gerby-project/hello-world/blob/master/.travis.yml">Gerby</a>.
+
+<br>
+
+<ul>
+<li><a href="lecture1.html">Lecture 1</a></li>
+<ul>
 </div>
 
 <script>
@@ -63,4 +82,3 @@ function myFunction() {
 
     </body>
 </html>
-
