@@ -467,51 +467,7 @@ cofibration if it is any morphism (resp., an isomorphism).
   <p> We will call this the <em>fibration iso-model structure</em> (resp., <em>cofibration iso-model structure</em>) and denote it $\mathcal{C}_\mathrm {fib}$ (resp., $\mathcal{C}_\mathrm {cof}$). In the fibration case only the terminal object is bifibrant, while in the cofibration case only the initial object is bifibrant. As such, in both cases, the homotopy category all objects become isomorphic. </p>
 </article>
 </p>
-<h2 id="a0000000001" class="tex-section"><span data-tag="">1.4</span> Things of Note</h2>
-<p>
-<article class="env-remark" id="">
-  <p><a class="environment-identifier">Remark <span data-tag="">1.4.1</span>.</a> Recall that the framework of model categories is set up so that one can invert certain morphisms by taking the homotopy category. One can sometimes forget the fact that the property of being a weak equivalence is not a symmetric relation. </p>
-  <p>We define the <em>pseudocircle</em> $\mathbb {S}$ to be the (non-Hausdorff) topological space whose underlying set is the quadruple $\{ x_1, x_2, x_3, x_4\} $ and whose open subsets are </p>
-  <div class="equation">
-  \[ \{  \{ x_1, x_2, x_3, x_4\}  , \{ x_1, x_2, x_3\}  , \{ x_1, x_2, x_4\} , \{ x_1, x_2\} , \{ x_1\} , \{ x_2\} , \emptyset \} . \]
-</div>
-  <p> There is a function of sets $f \colon S^1 \to \mathbb {S}$ which is defined by sending: </p>
-  <p><ul>
-  <li>
-a point in the open left half of $S^1$ to the point $x_1$;
-</li><li>
-a point in the open right half of $S^1$ to the point $x_2$;
-</li><li>
-the top point of $S^1$ to $x_3$;
-</li><li>
-the bottom point of $S^1$ to $x_4$.
-</li>
-</ul></p>
-  <p> This function is a continuous function which is also a weak homotopy equivalence. However, the only continuous functions in the reverse direction are the constant maps which must induce the trivial map of $\pi _1$&#160;<span class="cite">[McC66]</span>. </p>
-</article>
-</p>
-<p>
-<article class="env-remark" id="000B">
 
-  <p><a class="environment-identifier">Remark <span data-tag="000B">1.4.2</span>.</a> Although a model category $\mathcal{C}$ has all small limits and colimits, it is rare for $\operatorname {Ho}(\mathcal{C})$ to be both complete and cocomplete. However, it is true that $\operatorname {Ho}(\mathcal{C})$ has all small products and coproducts as remarked in&#160;<span class="cite">[<span class="postnote">Example 1.3.11</span>, Hov99]</span>. </p>
-  <p>Here we will give an explicit example in $\operatorname {Ho}(\textbf{Top}_{\mathrm{Quillen}})$ of a pushout which does not exist. </p>
-  <p>We let $S^1 = \{  z \in \mathbb {C} \mid |z| = 1\} $ and consider the span </p>
-  <div class="equation">
-  \[ \xymatrix{ S^1 \ar[r]^ f \ar[d]&  S^1 \\  \ast &  } \]
-</div>
-  <p> where $f(z) = z^2$. We assume that the pushout $P$ of the diagram exists. If such a $P$ exists, there would be a natural isomorphism $[P,X] = \operatorname {Hom}(\mathbb {Z}/2 , \pi _1(X))$. </p>
-  <p>Now, note that there is a fibration </p>
-  <div class="equation">
-  \[ S^1 = B \mathbb {Z} \xrightarrow {f} S^1 \to \mathbb {R}P^\infty = B(\mathbb {Z}/2) \to \mathbb {C}P^\infty = BS^1 \xrightarrow {Bf} \mathbb {C}P^\infty  \]
-</div>
-  <p> which gives an exact sequence </p>
-  <div class="equation">
-  \[ [P,S^1] \to [P, \mathbb {R}P^\infty ] \to [P, \mathbb {C}P^\infty ]. \]
-</div>
-  <p> We of course know that $\pi _1(S^1) = \mathbb {Z}$, $\pi _1(\mathbb {R}P^\infty )= \mathbb {Z}/2$ and $\pi _1(\mathbb {C}P^\infty ) = 0$. Therefore if $[P,X] = \operatorname {Hom}(\mathbb {Z}/2 , \pi _1(X))$ then we have an exact sequence $0 \to \mathbb {Z}/2 \to 0$ which is impossible. As such, $P$ does not exist. </p>
-  <p>More examples and further discussion of this particular example can be found at&#160;<span class="cite">[MOFa,MOFb]</span>. </p>
-</article>
-</p>
 
 <h2 id="a0000000025" class="tex-section"><span data-tag="">1.5</span> References for Lecture 1</h2>
 
