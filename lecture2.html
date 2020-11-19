@@ -1,0 +1,531 @@
+<!DOCTYPE HTML>
+<html>
+
+<link href="//fonts.googleapis.com/css?family=Poiret+One" rel='stylesheet' type='text/css'>
+<link href="//fonts.googleapis.com/css?family=Roboto" rel='stylesheet' type='text/css'>
+
+
+<link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico">
+<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="favicon.ico">
+
+<link rel="stylesheet" href="style.css">
+
+
+<head>
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ['tex2jax.js'],
+    jax: ['input/TeX','output/HTML-CSS'],
+    TeX: {
+      extensions: ['AMSmath.js', 'AMSsymbols.js', '/static/XyJax/extensions/TeX/xypic.js'],
+      Macros: {
+        linebreak: ["", 1, ""],
+        },
+      TagSide: 'left'
+    },
+    tex2jax: {
+      inlineMath: [['$','$']],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+    },
+    'HTML-CSS': { scale: 100 }
+  });
+</script>
+
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js"></script>
+
+
+
+        <title>Scott Balchin</title>
+    </head>
+
+    <body>
+
+    <div class="hero-image2">
+    </div>
+
+<div id="navbar">
+  <a class="active" href="bifibrant.html">Lectures</a>
+  <a href="admin.html">Administrative</a>
+  <a href="index.html">Home</a>
+</div>
+
+<div class="content" style="padding-left: 60px; padding-right: 60px">
+
+  <h1 id="chapter-second">Lecture 2</h1>
+
+  <h2>Slides available <a href="Lecture 2.pdf">here</a></h2>
+  
+  <h2>Video available <a href="https://youtu.be/yx_IQjvS_gQ">here</a></h2>
+  
+<h2 id="a0000000021" class="tex-section"><span data-tag="">2.1</span> Things of Note</h2>
+<p>
+<article class="env-remark" id="">
+  <p><a class="environment-identifier" >Remark <span data-tag="">2.1.1</span>.</a> Recall that the framework of model categories is set up so that one can invert certain morphisms by taking the homotopy category. One can sometimes forget the fact that the property of being a weak equivalence is not a symmetric relation. </p>
+  <p>We define the <em>pseudocircle</em> $\mathbb {S}$ to be the (non-Hausdorff) topological space whose underlying set is the quadruple $\{ x_1, x_2, x_3, x_4\} $ and whose open subsets are </p>
+  <div class="equation">
+  \[ \{  \{ x_1, x_2, x_3, x_4\}  , \{ x_1, x_2, x_3\}  , \{ x_1, x_2, x_4\} , \{ x_1, x_2\} , \{ x_1\} , \{ x_2\} , \emptyset \} . \]
+</div>
+  <p> There is a function of sets $f \colon S^1 \to \mathbb {S}$ which is defined by sending: </p>
+  </ul>
+  <li>
+a point in the open left half of $S^1$ to the point $x_1$;
+</li><li>
+a point in the open right half of $S^1$ to the point $x_2$;
+</li><li>
+the top point of $S^1$ to $x_3$;
+</li><li>
+the bottom point of $S^1$ to $x_4$.
+</li>
+</ul>
+  <p> This function is a continuous function which is also a weak homotopy equivalence. However, the only continuous functions in the reverse direction are the constant maps which must induce the trivial map of $\pi _1$&#160;<span class="cite">[McC66]</span>. </p>
+</article>
+</p>
+<p>
+<article class="env-remark" id="000C">
+    
+  <p><a class="environment-identifier">Remark <span data-tag="000C">2.1.2</span>.</a> Although a model category $\mathcal{C}$ has all small limits and colimits, it is rare for $\operatorname {Ho}(\mathcal{C})$ to be both complete and cocomplete. However, it is true that $\operatorname {Ho}(\mathcal{C})$ has all small products and coproducts as remarked in&#160;<span class="cite">[<span class="postnote">Example 1.3.11</span>,  Hov99]</span>. </p>
+  <p>Here we will give an explicit example in $\operatorname {Ho}(\textbf{Top}_{\mathrm{Quillen}})$ of a pushout which does not exist. </p>
+  <p>We let $S^1 = \{  z \in \mathbb {C} \mid |z| = 1\} $ and consider the span </p>
+  <div class="equation">
+  \[ \xymatrix{ S^1 \ar[r]^ f \ar[d]&  S^1 \\  \ast &  } \]
+</div>
+  <p> where $f(z) = z^2$. We assume that the pushout $P$ of the diagram exists. If such a $P$ exists, there would be a natural isomorphism $[P,X] = \operatorname {Hom}(\mathbb {Z}/2 , \pi _1(X))$. </p>
+  <p>Now, note that there is a fibration </p>
+  <div class="equation">
+  \[ S^1 = B \mathbb {Z} \xrightarrow {f} S^1 \to \mathbb {R}P^\infty = B(\mathbb {Z}/2) \to \mathbb {C}P^\infty = BS^1 \xrightarrow {Bf} \mathbb {C}P^\infty  \]
+</div>
+  <p> which gives an exact sequence </p>
+  <div class="equation">
+  \[ [P,S^1] \to [P, \mathbb {R}P^\infty ] \to [P, \mathbb {C}P^\infty ]. \]
+</div>
+  <p> We of course know that $\pi _1(S^1) = \mathbb {Z}$, $\pi _1(\mathbb {R}P^\infty )= \mathbb {Z}/2$ and $\pi _1(\mathbb {C}P^\infty ) = 0$. Therefore if $[P,X] = \operatorname {Hom}(\mathbb {Z}/2 , \pi _1(X))$ then we have an exact sequence $0 \to \mathbb {Z}/2 \to 0$ which is impossible. As such, $P$ does not exist. </p>
+  <p>More examples and further discussion of this particular example can be found at&#160;<span class="cite">[MOFa, MOFb]</span>. </p>
+</article>
+</p>
+<h2 id="a0000000015" class="tex-section"><span data-tag="">2.2</span> Quillen Functors</h2>
+<p>
+<article class="env-definition" id="">
+  <p><a class="environment-identifier" >Definition <span data-tag="">2.2.1</span>.</a> Suppose that $\mathcal{C}$ and $\mathcal{D}$ are model categories. We say that a pair </p>
+  <div class="equation">
+  \begin{equation*}  F : \mathcal{C} \rightleftarrows \mathcal{D}: U \end{equation*}
+</div>
+  <p> of adjoint functors with $F$ the left adjoint is a <em>Quillen adjunction</em> if the following equivalent conditions are satisfied: </p>
+  </ul>
+  <li>
+$F$ preserves cofibrations and acyclic cofibrations;
+</li><li>
+$U$ preserves fibrations and acyclic fibrations;
+</li><li>
+$F$ preserves cofibrations and $U$ preserves fibrations;
+</li><li>
+$F$ preserves acyclic cofibrations and $U$ preserves acyclic fibrations.
+</li>
+</ul>
+  <p> We say that $F$ is a <em>left Quillen functor</em> and $U$ is a <em>right Quillen functor</em>. The fact that these conditions are indeed equivalent can be found in <span class="cite">[<span class="postnote">Proposition 8.5.3</span>, Hir03]</span>. </p>
+</article>
+</p>
+<p>
+<article class="env-lemma" id="000D">
+  <p><a class="environment-identifier">Lemma <span data-tag="000D">2.2.2</span> <span class="named">(Ken Brown's Lemma&#160;<span class="cite">[<span class="postnote">Lemma 1.1.12</span>, Hov99]</span>)</span>.</a>  Given a Quillen adjunction $F : \mathcal{C} \rightleftarrows \mathcal{D}: U$ as above, then </p>
+  </ul>
+  <li>
+$F$ preserves weak equivalences between cofibrant objects.
+</li><li>
+$U$ preserves weak equivalences between fibrant objects.
+</li>
+</ul>
+</article>
+</p>
+<p>
+<article class="env-lemma" id="">
+  <p><a class="environment-identifier" >Lemma <span data-tag="">2.2.3</span> <span class="named">(<span class="cite">[<span class="postnote">Corollary A.2</span>, Dug01]</span>)</span>.</a>  Let $\mathcal{C}$ and $\mathcal{D}$ be model categories along with an adjoint pair $F : \mathcal{C} \rightleftarrows \mathcal{D}: U$. Then these functors are Quillen if and only if $U$ preserves fibrations between fibrant objects and acyclic fibrations. </p>
+  <p>Dually we have that these functors are Quillen if and only if $F$ preserves cofibrations between cofibrant objects and acyclic cofibrations. </p>
+</article>
+</p>
+<p>
+Given a Quillen adjunction $F : \mathcal{C} \rightleftarrows \mathcal{D}: U$, we would like to get a <em>derived adjunction</em> (i.e., an adjunction of homotopy categories) $\mathbb {F} : \operatorname {Ho}(\mathcal{C}) \rightleftarrows \operatorname {Ho}(\mathcal{D}): \mathbb {U}$. Note that the following definition makes use of the choice of functorial factorization. Without functorial factorizations, the following construction would depend on a chosen cofibrant replacement (see <span class="cite">[<span class="postnote">Section 8.5</span>, Hir03]</span>).
+</p>
+<p>
+<article class="env-definition" id="">
+  <p><a class="environment-identifier" >Definition <span data-tag="">2.2.4</span>.</a> Let $F : \mathcal{C} \rightleftarrows \mathcal{D}: U$ be a Quillen adjunction between model categories, then we define </p>
+  </ul>
+  <li>
+The <em>left derived functor</em> of $F$ to be the composite
+</p>
+<div class="equation">
+  \[ \mathbb {F} \colon \operatorname {Ho}(\mathcal{C}) \xrightarrow {\operatorname {Ho}(Q)} \operatorname {Ho}(\mathcal{C}) \xrightarrow {\operatorname {Ho}(F)} \operatorname {Ho}(\mathcal{D}). \]
+</div>
+</li><li>
+The <em>right derived functor</em> of $U$ to be the composite
+</p>
+<div class="equation">
+  \[ \mathbb {U} \colon \operatorname {Ho}(\mathcal{D}) \xrightarrow {\operatorname {Ho}(R)} \operatorname {Ho}(\mathcal{D}) \xrightarrow {\operatorname {Ho}(U)} \operatorname {Ho}(\mathcal{C}). \]
+</div>
+</li>
+</ul>
+</article>
+</p>
+<p>
+The existence, and desired properties of these derived functors are the subject of&#160;<span class="cite">[<span class="postnote">Section 1.3.2</span>, Hov99]</span>. Also, note by construction that one could define $\mathbb {F}$ even if $F$ is not a Quillen functor, it suffices that $F$ takes weak equivalences between cofibrant objects to weak equivalences.
+</p>
+<p>
+<article class="env-definition" id="">
+  <p><a class="environment-identifier" >Definition <span data-tag="">2.2.5</span>.</a> Let $\mathcal{C}$ and $\mathcal{D}$ be model categories equipped with a Quillen adjunction $F : \mathcal{C} \rightleftarrows \mathcal{D}: U$. Then we say that $\mathcal{C}$ and $\mathcal{D}$ are <em>Quillen equivalent</em> if the derived adjunction $\mathbb {F} : \operatorname {Ho}(\mathcal{C}) \rightleftarrows \operatorname {Ho}(\mathcal{D}): \mathbb {U}$ is an equivalence of categories. We will sometimes write $\mathcal{C} \simeq _ Q \mathcal{D}$ to indicate the existence of a (potential zig-zag of) Quillen equivalences between two model structures. </p>
+</article>
+</p>
+<p>
+In practice, one does not check Quillen equivalences in this fashion, instead there are some equivalent conditions that one usually checks instead.
+</p>
+<p>
+<article class="env-proposition" id="">
+  <p><a class="environment-identifier" >Proposition <span data-tag="">2.2.6</span> <span class="named">(<span class="cite">[<span class="postnote">Proposition 1.3.13</span>, Hov99]</span>)</span>.</a>  Suppose we have a Quillen adjunction $F : \mathcal{C} \rightleftarrows \mathcal{D}: U$, then the following are equivalent: </p>
+  <ol>
+  <li>
+The adjunction is a Quillen equivalence.
+</li><li>
+For all cofibrant $X \in \mathcal{C}$ and fibrant $Y \in \mathcal{D}$ a morphism $f \colon FX \to Y$ is a weak equivalence if and only if $\varphi (f) \colon X \to UY$ is a weak equivalence in $\mathcal{C}$.
+</li><li>
+The composite $X \xrightarrow {\eta } UFX \to URFX$ is a weak equivalence for all cofibrant $X$, and the composite $FQUX \to FUX \xrightarrow {\varepsilon } X$ is a weak equivalence for all fibrant $X$.
+</li>
+</ol>
+</article>
+</p>
+<h2 id="a0000000011" class="tex-section"><span data-tag="">2.3</span> Stable Module Categories</h2>
+<p>
+<article class="env-definition" id="">
+  <p><a class="environment-identifier" >Definition <span data-tag="">2.3.1</span>.</a> A ring $R$ is <em>Frobenius</em> if the projective and injective $R$-modules coincide. </p>
+</article>
+</p>
+<p>
+The main example of such a ring to keep in mind is the group ring $k[G]$ for $G$ a finite group and a field $k$. We now define the stable module category associated to a Frobenius ring.
+</p>
+<p>
+<article class="env-definition" id="">
+  <p><a class="environment-identifier" >Definition <span data-tag="">2.3.2</span>.</a> </p>
+  </ul>
+  <li>
+Let $R$ be a Frobenius ring, then two morphisms $f,g \colon M \to N$ in $ R\textbf{-Mod}$ are <em>stably equivalent</em> if the difference $f-g$ factors through a projective module.
+</li><li>
+Let $R$ be a Frobenius ring. Then the <em>stable category of $R$-modules</em> is the category whose objects are left $R$-modules and whose morphisms are the stable equivalence classes of $R$-module morphisms. We will denote the this category $\textbf{StMod}(R)$.
+</li>
+</ul>
+</article>
+</p>
+<p>
+It should be suggestive that one can find a model structure on $ R\textbf{-Mod}$ such that the homotopy category of this model structure is equivalent to the stable module category, and indeed this is true.
+</p>
+<p>
+<article class="env-proposition" id="">
+  <p><a class="environment-identifier" >Proposition <span data-tag="">2.3.3</span> <span class="named">(<span class="cite">[<span class="postnote">Theorem 2.2.12</span>, Hov99]</span>)</span>.</a>  Let $R$ be a Frobenius ring. Then there is a cofibrantly generated model structure on $R\textbf{-Mod}$ where a morphism $f \colon M \to N$ is a: </p>
+  </ul>
+  <li>
+weak equivalence if it is a stable equivalence;
+</li><li>
+fibration if it is a surjection;
+</li><li>
+cofibration if it is an injection.
+</li>
+</ul>
+  <p> We will call this the <em>stable model structure</em> and denote it $ R\textbf{-Mod}_{\mathrm{st}}$. We will sometimes also refer to it as the <em>model structure presenting the stable homotopy category</em> as $\operatorname{Ho}(R\textbf{-Mod}_{\mathrm{st}}) \simeq \textbf{StMod}(R)$.  All objects in this model structure are bifibrant. </p>
+</article>
+</p>
+<p>
+<article class="env-proposition" id="000E">
+  <p><a class="environment-identifier">Proposition <span data-tag="000E">2.3.4</span> <span class="named">(<span class="cite">[Sch02]</span>)</span>.</a>  Let $p$ be an odd prime, then the homotopy categories of $(\mathbb {Z}/p)[\varepsilon ]/(\varepsilon ^2) \textbf{-Mod}_{\mathrm{st}}$ and $(\mathbb {Z}/p^2) \textbf{-Mod}_\mathrm {st}$ are triangulated equivalent, and are equivalent to $\textbf{StMod}(\mathbb {Z}/p)$. However there is no Quillen equivalence between these model structures. </p>
+</article>
+</p>
+<h2 id="a0000000008" class="tex-section"><span data-tag="">2.4</span> Model Structures on $\textbf{Set}$</h2>
+<p>
+We will need notation for the following collections of morphisms in $\textbf{Set}$.
+</p>
+<p>
+<article class="env-definition" id="">
+  <p><a class="environment-identifier" >Definition <span data-tag="">2.4.1</span>.</a> </p>
+  </ul>
+  <li>
+$\operatorname {bij} :=$ the class of bijections.
+</li><li>
+$\operatorname {inj} :=$ the class of injections.
+</li><li>
+$\operatorname {surj} :=$ the class of surjections.
+</li><li>
+$\operatorname {all} :=$ the class of all morphisms.
+</li><li>
+$\operatorname {inj}_{\emptyset } :=$the class of injections with empty domain.
+</li><li>
+$\operatorname {inj}_{\neq \emptyset } :=$ the class of injections with non-empty domain.
+</li><li>
+$\operatorname {all}_{\neq \emptyset } :=$ the class of all morphisms with non-empty domain.
+</li>
+</ul>
+</article>
+</p>
+<p>
+<article class="env-proposition" id="">
+  <p><a class="environment-identifier" >Proposition <span data-tag="">2.4.2</span> <span class="named">(<span class="cite">[BAC]</span>)</span>.</a>  The following collections of morphisms give a model structure on the category $\textbf{Set}$ given as $(\operatorname {W},\operatorname {Fib},\operatorname {Cof})$: </p>
+  <ol>
+  <li>
+$\textbf{Set}_{(-2)}^a$ := $(\operatorname {all},\operatorname {all},\operatorname {bij})$;
+</li><li>
+$\textbf{Set}_{(-2)}^b$ := $(\operatorname {all},\operatorname {inj},\operatorname {surj})$;
+</li><li>
+$\textbf{Set}_{(-2)}^c$ := $(\operatorname {all}, \operatorname {surj} \cup \operatorname {inj}_{\emptyset },\operatorname {inj}_{\neq \emptyset } \cup \{ \operatorname {id}_\emptyset \} )$;
+</li><li>
+$\textbf{Set}_{(-2)}^d$ := $(\operatorname {all}, \operatorname {surj} \cup \operatorname {bij}_{\emptyset },\operatorname {all}_{\neq \emptyset } \cup \{ \operatorname {id}_\emptyset \} )$;
+</li><li>
+$\textbf{Set}_{(-2)}^e$ := $(\operatorname {all}, \operatorname {surj}, \operatorname {inj})$;
+</li><li>
+$\textbf{Set}_{(-2)}^f$ := $(\operatorname {all}, \operatorname {bij}, \operatorname {all})$;
+</li><li>
+$\textbf{Set}_{(-1)}^a$ := $(\operatorname {all}_{\neq \emptyset } \cup \{ \operatorname {id}_\emptyset \} , \operatorname {surj} \cup \operatorname {inj}_{\emptyset }, \operatorname {inj})$;
+</li><li>
+$\textbf{Set}_{(-1)}^b$ := $(\operatorname {all}_{\neq \emptyset } \cup \{ \operatorname {id}_\emptyset \} , \operatorname {bij} \cup \operatorname {inj}_{\emptyset }, \operatorname {all})$;
+</li><li>
+$\textbf{Set}_{(0)}$ := $(\operatorname {bij},\operatorname {all},\operatorname {all})$.
+</li>
+</ol>
+  <p> Moreover this lift is exhaustive. That is, there are exactly nine model structures on the category of sets. The subscript of the model structure indicates a homotopy type (i.e., models with the same weak equivalences have the same subscript) while the superscript is an indexing. </p>
+</article>
+</p>
+<p>
+Now that we have identified all of the possible model structures, all that is left is to describe the Quillen adjunctions between them. As the homotopy category is determined by the weak equivalences we see that there are three homotopy types. In particular, $(-2)$ refers to the fact that the homotopy category is equivalent to the terminal category, for $(-1)$ we have a discrete category on two objects, and the homotopy type of $(0)$ captures the homotopy type of sets (i.e., $\textbf{Set}_{(0)}$ is the trivial model structure).
+</p>
+<p>
+To determine the Quillen equivalences, it is enough to determine if the identity functor is Quillen or not (indeed, every self-equivalence of $\textbf{Set}$ is naturally isomorphic to the identity functor).
+</p>
+<p>
+There is a Quillen equivalence $\textbf{Set}_{(-1)}^{\,  a} \rightleftarrows \textbf{Set}_{(-1)}^{\,  b} $ where we follow our usual convention of the left Quillen functor being on top.
+</p>
+<p>
+The situation for the models which model the homotopy theory of $(-2)$-types is slightly more complex. Indeed, there are no direct Quillen equivalences between all of the model structures. Instead, we have a zig-zag of a left and a right Quillen equivalence where there middle model is taken to be $\textbf{Set}_{(-2)}^{\,  f}$ which has the maximal set of cofibrations. Equally, one could have factored through $\textbf{Set}_{(-2)}^{\,  a}$ which has the maximal set of fibrations. The left Quillen functors between the $(-2)$-type models are given in the diagram below.
+</p>
+<div class="equation">
+  \[ \xymatrix@C=4em{ & b \ar[ddl] & \\  a \ar[ur] \ar[d] \ar[ddr] \ar[rr] \ar[drr] & & c \ar[d] \ar[dll] \ar[ddl]\\  f& & d \ar[ll]\\  & e \ar[ul]&  } \]
+</div>
+<h2 id="a0000000001" class="tex-section"><span data-tag="">2.5</span> Simplicial Sets</h2>
+<p>
+<article class="env-definition" id="000F">
+  <p><a class="environment-identifier">Definition <span data-tag="000F">2.5.1</span>.</a>  The <em>simplex category</em> $\Delta $ has for objects finite totally ordered sets $[n]=\{ 0,1, \dots , n\} $ and morphisms are generated by: </p>
+  </ul>
+  <li>
+<em>coface maps</em> $\delta _ i \colon [n-1] \to [n]$ for $n > 0$ and $0 \leq i < n$, which is the injection whose image leaves out $i \in [n]$.
+</li><li>
+<em>codegeneracy maps</em> $\sigma _ i \colon [n+1] \to [n]$ for $n > 0$ and $0 \leq i < n$, which is the surjection such that $\sigma _ i(i) = \sigma _ i(i+1)=i$.
+</li>
+</ul>
+  satisftying the simplicial identities.
+  
+<p>
+<article class="env-definition" id="">
+  <p><a class="environment-identifier" >Definition <span data-tag="">2.5.2</span>.</a> A <em>simplicial set</em> is a functor $X \colon \Delta ^{op} \to \textbf{Set}$. We will denote by $\textbf{sSet}$ the category of all simplicial sets and natural transformations between them. </p>
+</article>
+</p>
+<p>
+Using the definition of $\Delta $ from Definition&#160; 2.5.1, we are able to describe a simplicial set in a completely combinatorial fashion.
+</p>
+<p>
+<article class="env-definition" id="">
+  <p><a class="environment-identifier" >Definition <span data-tag="">2.5.3</span>.</a> A <em>simplicial set</em> $X$ is a collection of sets $X_ n$ for all $n \geq 0$, and for each $n$ we have <em>face maps</em> $d_ i \colon X_ n \to X_{n-1}$ and <em>degeneracy maps</em> $s_ i \colon X_ n \to X_{n+1}$ satisfying the following relations: </p>
+  <div class="equation">
+  \[ d_ i d_ j = d_{j-1} d_ i \qquad 0 \leq i < j \leq n \]
+</div>
+  <div class="equation">
+  \[ s_ i s_ j= s_{j+1} s_{i} \qquad \;  0 \leq i \leq j < n \]
+</div>
+  <div class="equation">
+  \[ d_ i s_ j = \begin{cases}  s_{j-1} d_ i &  \quad \qquad 0 \leq i < j < n \\  \text{id} &  \qquad \quad 0 \leq j < n \text{ and } i=j \text{ or } i=j+1 \\  s_ j d_{i-1} &  \qquad \quad 0 \leq j \text{ and } j+1 < i \leq n \end{cases} \]
+</div>
+</article>
+</p>
+<p>
+<article class="env-proposition" id="000G">
+  <p><a class="environment-identifier">Proposition <span data-tag="000G">2.5.4</span> <span class="named">(<span class="cite">[<span class="postnote">Example 1.5.5</span>, Rie14]</span>)</span>.</a>  Let $\mathcal{C}$ be a small category, then there is a simplicial set $N\mathcal{C}$, called the <em>nerve of $\mathcal{C}$</em> defined such that: </p>
+  </ul>
+  <li>
+$(N\mathcal{C})_0 = \operatorname {ob}(\mathcal{C})$;
+</li><li>
+$(N\mathcal{C})_1 = \operatorname {mor}(\mathcal{C})$;
+</li><li>
+$\cdots $;
+</li><li>
+$(N\mathcal{C})_ n = \{ \text{strings of }n \text{ composable arrows in }\mathcal{C}\} $.
+</li>
+</ul>
+  <p> The degeneracy map $s_ i$ inserts the identity at the $i^\text {th}$ position, and the face maps $d_ i$ compose the $i^\text {th}$ and $(i+1)^\text {st}$ arrows. The nerve is right adjoint of an adjoint pair </p>
+  <div class="equation">
+  \[ \tau _1 : \textbf{sSet} \rightleftarrows \textbf{Cat} : N \]
+</div>
+  <p> The left adjoint $\tau _1$ is the functor that we call the <em>fundamental category</em> of a simplicial set. </p>
+</article>
+</p>
+<p>
+Using the Yoneda embedding, we form the representable object $\Delta [n] = \operatorname {Hom}_\Delta (-,[n])$, which we call the <em>standard $n$-simplex</em>.
+</p>
+<p>
+The key point about simplicial sets is that they provide a convenient combinatorial model for topological spaces. This correspondence is facilitated by a singular and geometric realization functor. In what follows, denote by $\Delta _ n \in \textbf{Top}$ be the standard topological $n$-simplex:
+</p>
+<div class="equation">
+  \[ \Delta _ n = \left\{ (x_0, \dots , x_ n) \in \mathbb {R}^{n+1} : 0 \leq x_ i \leq 1, \sum x_ i = 1\right\} . \]
+</div>
+<p>
+<article class="env-definition" id="000J">
+  <p><a class="environment-identifier">Definition <span data-tag="000J">2.5.5</span>.</a>  Let $X$ be a topological space. The <em>singular simplicial set</em> of $X$ is the simplicial set $S(X)$ such that </p>
+  <div class="equation">
+  \[ S(X)_ n = \text{Hom}_\textbf {Top}(\Delta _ n,X). \]
+</div>
+</article>
+</p>
+<p>
+Dually to the above functor, we can define a functor $|-| \colon \textbf{sSet} \to \textbf{Top}$ called the <em>geometric realization</em>. For $\Delta [n]$ a representable object, we define $|\Delta [n]|$ to be $\Delta _ n$. One can then use a coend construction to extend this to the entire category.
+</p>
+<p>
+<article class="env-definition" id="000K">
+  <p><a class="environment-identifier">Definition <span data-tag="000K">2.5.6</span>.</a>  Let $X$ be a simplicial set, then we define its <em>geometric realization</em> $|X|$ to be the topological space </p>
+  <div class="equation">
+  \[ |X| := \int ^ n X_ n \times \Delta _ n. \]
+</div>
+</article>
+</p>
+<p>
+<article class="env-proposition" id="">
+  <p><a class="environment-identifier" >Proposition <span data-tag="">2.5.7</span>.</a>  The pair of functors </p>
+  <div class="equation">
+  \[ |-| : \textbf{sSet} \rightleftarrows \textbf{Top} : S(-) \]
+</div>
+  <p> form an adjoint pair. </p>
+</article>
+</p>
+<p>
+<article class="env-definition" id="000L">
+  <p><a class="environment-identifier">Definition <span data-tag="000L">2.5.8</span>.</a>  The <em>boundary</em> of the standard $n$-simplex is the sub-simplicial set $\partial \Delta [n] \hookrightarrow \Delta [n]$ which is the union of all faces of $\Delta [n]$. We have that $|\partial \Delta [n]|$ is the boundary of the topological $n$-simplex&#160;<span class="cite">[<span class="postnote">Remark 5.4</span>, Rie11]</span>. </p>
+</article>
+</p>
+<p>
+<article class="env-definition" id="000M">
+  <p><a class="environment-identifier">Definition <span data-tag="000M">2.5.9</span>.</a>  For each $n \geq 0$ and $0 \leq k \leq n$, the <em>$(n,k)$-horn</em> is the sub-simplicial set $\Lambda ^ k[n] \hookrightarrow \Delta [n]$ which is the union of all faces except the $k^\text {th}$ one. We say the horn is <em>outer</em> if $k=0,n$, and <em>inner</em> otherwise. We have that $|\Lambda ^ k[n]|$ is the union of all of the faces of the topological $n$-simplex with the $k^\text {th}$ face removed&#160;<span class="cite">[<span class="postnote">Remark 5.4</span>, Rie11]</span>. </p>
+</article>
+</p>
+<p>
+<article class="env-definition" id="">
+  <p><a class="environment-identifier" >Definition <span data-tag="">2.5.10</span>.</a> A morphism of simplicial sets $f \colon X \to Y$ is a <em>Kan fibration</em> if it has the right lifting property for all horn inclusions. That is, we have the following commutative diagram for all $n \geq 0$ and $0 \leq k \leq n$: </p>
+  <div class="equation">
+  \[ \xymatrix{\Lambda^k[n] \ar[d] \ar[r] &  X \ar[d]^f \\  \Delta[n] \ar@{..>}[ur] \ar[r] &  Y} \]
+</div>
+</article>
+</p>
+<p>
+<article class="env-definition" id="">
+  <p><a class="environment-identifier" >Definition <span data-tag="">2.5.11</span>.</a> A morphism $f \colon X \to Y$ in $\textbf{sSet}$ is a <em>monomorphism</em> if it is levelwise injective. That is, for all $n \geq 0$ there is an injection of sets $f_ n \colon X_ n \to Y_ n$. </p>
+</article>
+</p>
+<p>
+<article class="env-proposition" id="000N">
+  <p><a class="environment-identifier">Proposition <span data-tag="000N">2.5.12</span> <span class="named">(<span class="cite">[<span class="postnote">Chapter II </span>, Qui67]</span>)</span>.</a>  There is a combinatorial model structure on $\textbf{sSet}$ where a morphism $f \colon X \to Y$ is a: </p>
+  </ul>
+  <li>
+weak equivalence if its geometric realization $|f| \colon |X| \to |Y|$ is a weak homotopy equivalence in <strong>Top</strong>;
+</li><li>
+fibration is it is a Kan fibration;
+</li><li>
+cofibrations if it is a monomorphism.
+</li>
+</ul>
+  <p> We call this the <em>Kan-Quillen model structure</em> and denote it $\textbf{sSet}_\mathrm{Kan}$. The cofibrations are generated by the boundary inclusions $\partial \Delta [n] \to \Delta [n]$ for all $n \geq 0$ and the acyclic cofibrations are generated by the horn inclusions $\Lambda ^ k[n] \to \Delta [n]$ for all $n \geq 0$ and $0 \leq k \leq n$. </p>
+</article>
+</p>
+<p>
+<article class="env-definition" id="">
+  <p><a class="environment-identifier" >Definition <span data-tag="">2.5.13</span>.</a> A fibrant object in $\textbf{sSet}_{\mathrm{Kan}}$ is called a <em>Kan complex</em>. In particular a Kan complex is a simplicial set $X$ such that we can find fillers </p>
+  <div class="equation">
+  \[ \xymatrix{ \Lambda ^ k[n] \ar[d] \ar[r] &  X \\  \Delta [n] \ar@{..>}[ur] } \]
+</div>
+  <p> for all $n \geq 0$ and $0 \leq k \leq n$. </p>
+</article>
+</p>
+<p>
+<article class="env-theorem" id="000P">
+  <p><a class="environment-identifier">Theorem <span data-tag="000P">2.5.14</span> <span class="named">(<span class="cite">[<span class="postnote">Chapter II </span>, Qui67]</span>)</span>.</a>  There is a Quillen equivalence </p>
+  <div class="equation">
+  \[ |-| : \textbf{sSet}_\text {Kan} \rightleftarrows \textbf{Top}_{\mathrm{Quillen}} : S(-) \]
+</div>
+  <p> given by the geometric realization and singular functors where $\textbf{Top}_{\mathrm{Quillen}}$ is the Quillen model structure on $\textbf{Top}$. </p>
+</article>
+</p>
+<p>
+<article class="env-remark" id="000Q">
+  <p><a class="environment-identifier">Remark <span data-tag="000Q">2.5.15</span>.</a>  Another useful feature of the Kan-Quillen model structure is that there is an explicit description of a functorial fibrant replacement functor, which we now recall&#160;<span class="cite">[Kan57, Gui06]</span>. </p>
+  <p>Denote by $\operatorname {sd} \Delta [n]$ the <em>barycentric subdivision</em> of $\Delta [n]$ which is defined to be the nerve of the poset of subsets of $[n]$. For a simplicial set $X$, define the object $\text{Ex}(X) \in \textbf{sSet}$ as $\text{Ex}(X)_ n = \text{Hom}_\textbf {sSet}(\text{sd} \Delta [n] , X)$. This gives an endofunctor $\text{Ex} \colon \textbf{sSet} \to \textbf{sSet}$ which is right adjoint to the barycentric subdivision. There is a <em>last vertex map</em> $lv \colon \text{sd} \Delta [n] \to \Delta [n]$ induced via the poset morphism $(i_0, \dots , i_ m) \mapsto i_ m$. By taking colimits this gives a morphism $lv \colon \text{sd} X \to X$ for any simplicial set $X$. We denote by $j \colon X \to \text{Ex}(X)$ the adjoint to the last vertex map. </p>
+  <p>For an arbitrary simplicial set $X$, consider the directed system </p>
+  <div class="equation">
+  \[ \xymatrix{X \ar[r]^-{j_ X} &  \text{Ex}(X) \ar[r]^-{j_{\text{Ex}(X)}}&  \text{Ex}^2(X) \ar[r]^-{j_{\text{Ex}^2(X)}}&  \cdots } \]
+</div>
+  <p> whose colimit we denote $\text{Ex}^\infty (X)$. The functor $\text{Ex}^\infty (-)$ is a functorial fibrant replacement in the Kan-Quillen model structure on simplicial sets&#160;<span class="cite">[<span class="postnote">Section III.5, Theorem 4.8</span>, GJ99]</span>. </p>
+</article>
+</p>
+
+<h2 id="a0000000025" class="tex-section"><span data-tag="">1.5</span> References for Lecture 1</h2>
+
+<span class="cite">[BAC]</span> Tobias Barthel and Omar Antolin-Camarena <a href="https://www.matem.unam.mx/~omar/notes/modelcatsets.html"> The nine model category structures on the category of sets</a>.
+<br><br>
+
+<span class="cite">[Dug01]</span> Daniel Dugger. Replacing model categories with simplicial ones. <i>Trans. Amer. Math. Soc.</i>, 353(12):5003-5027), 2001.
+<br><br>
+
+<span class="cite">[GJ99]</span> Paul Goerss and John F. Jardine. Simplicial homotopy theory, volume 174 of <i>Progress in Mathematics</i>.  Birkhauser Verlag, Basel,1999.
+<br><br>
+
+<span class="cite">[Gui06]</span> B. Guillou. <a href="http://www.ms.uky.edu/~guillou/KanEx.pdf">Kan's $\operatorname{Ex}^\infty$ functor</a>,   2007. Unpublished  notes.
+<br><br>
+
+<span class="cite">[Hir03]</span> Philip S. Hirschhorn. Model categories and their localizations, volume 99 of <i>Mathematical  Surveys and  Monographs</i>.  American Mathematical Society, Providence, RI,2003.
+<br><br>
+
+<span class="cite">[Hov99]</span> Mark Hovey. Model  categories, volume 63 of <i>Mathematical  Surveys and  Monographs</i>.  American Mathematical Society, Providence, RI,1999.
+<br><br>
+
+<span class="cite">[Kan57]</span> Daniel M. Kan. On c. s. s. complexes. <i>Amer. J. Math.</i>, 79:449-476, 1957.
+<br><br>
+
+<span class="cite">[McC66]</span> Michael C. McCord. Singular homology groups and homotopy groups of finite topological spaces. <i>Duke Math. J.</i>, 33:465-474, 1966.
+<br><br>
+
+<span class="cite">[MOFa]</span> <a href="https://mathoverflow.net/questions/10364/categorical-homotopy-colimits">Categorical homotopy colimits</a>.  MathOverflow.
+<br><br>
+
+<span class="cite">[MOFb]</span> <a href="https://mathoverflow.net/questions/239383/the-homotopy-category-is-not-complete-nor-cocomplete">The  homotopy  category  is  not  complete  nor  cocomplete</a>. MathOverflow.
+<br><br>
+
+<span class="cite">[Qui67]</span> Daneil G. Quillen. Homotopical Algebra, volume 43 of <i>Lecture Notes in Mathematics</i>.  Springer-Verlag, Berlin-New York, 1967.
+<br><br>
+
+<span class="cite">[Rie11]</span> Emily Riehl. <a href="http://www.math.jhu.edu/~eriehl/ssets.pdf">A leisurely introduction to simplicial sets</a>, 2011.
+<br><br>
+
+<span class="cite">[Rie14]</span> Emily Riehl. Categorical homotopy theory, volume 24 of <i>New Mathematical Monographs</i>. Cambridge University Press, Cambridge, 2014.
+<br><br>
+
+<span class="cite">[Sch02]</span> Marco Schlichting. A note on $K$-theory and triangulated categories. <i>Invent. Math.</i>, 150(1):111-116, 2002.
+<br><br>
+</div>
+
+<script>
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>
+
+    </body>
+</html>
+
+
