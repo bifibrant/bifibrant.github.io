@@ -59,7 +59,271 @@
   
   <h2>Video available <a href="https://youtu.be/1f9YHi5Z8XM">here</a></h2>
 
-<h2>Lectures notes to appear soon</h2>
+<h1 id="chapter-third" class="tex-chapter"><span data-tag="000R">3</span> Lecture 3</h1>
+
+<h2 id="a0000000011" class="tex-section"><span data-tag="">3.1</span> Cofibrant Generation</h2>
+<p>
+<article class="env-definition" id="000S">
+  <p><a class="environment-identifier">Definition <span data-tag="000S">3.1.1</span>.</a> Let $\mathcal{C}$ be cocomplete category, $S$ a set of morphisms in $\mathcal{C}$, and $I$ any collection of morphisms in $\mathcal{C}$. Then denote by: </p>
+  <p><ul>
+  <li>
+$\mathrm{rlp}(S)$ the collection of morphisms which have the RLP with respect to $S$.
+</li><li>
+$\mathrm{llp}(S)$ the collection of morphisms which have the LLP with respect to $S$.
+</li><li>
+$\mathrm{cell}(I)$ the collection of morphisms which can be obtained via transfinite composition of pushouts and coproducts of elements in $I$.
+</li><li>
+$\mathrm{cof}(I)$ the class of retracts of elements in $\mathrm{cell}(I)$.
+</li><li>
+$\mathrm{inj}(I) = \mathrm{rlp}(I)$ the class of morphisms with the RLP with respect to $I$.
+</li>
+</ul></p>
+</article>
+</p>
+<p>
+<article class="env-definition" id="000T">
+  <p><a class="environment-identifier">Definition <span data-tag="000T">3.1.2</span>.</a> A model category $\mathcal{C}$ is <em>cofibrantly generated</em> if there are small sets of morphisms $I$ and $J$ in $\mathrm{mor}(\mathcal{C})$ such that: </p>
+  <p><ol>
+  <li>
+$\mathrm{cof}(I)$ coincides with the collection of cofibrations of $\mathcal{C}$.
+</li><li>
+$\mathrm{cof}(J)$ coincides with the collection of acyclic cofibrations in $\mathcal{C}$.
+</li><li>
+The domains of the elements of $I$ and $J$ are small relative to $I$ and $J$ respectively.
+</li>
+</ol></p>
+  <p> In other words, the set $I$ (resp., $J$) generates all cofibrations (resp., acyclic cofibrations) via transfinite constructions. </p>
+</article>
+</p>
+<p>
+<article class="env-lemma" id="">
+  <p><a class="environment-identifier">Lemma <span data-tag="">3.1.3</span> <span class="named">(<span class="cite">[<span class="postnote">Proposition 2.1.18</span>, Hov99]</span>)</span>.</a> Let $\mathcal{C}$ be a cofibrantly generated model category then: </p>
+  <p><ol>
+  <li>
+$\mathrm{cof(I)} = \mathrm{llp}(\mathrm{rlp}(I))$.
+</li><li>
+$\mathrm{cof(J)} = \mathrm{llp}(\mathrm{rlp}(J))$.
+</li>
+</ol></p>
+  <p> In particular, the fibrations are exactly the class $\mathrm{rlp}(J)$ and the acyclic fibrations are $\mathrm{rlp}(I)$. </p>
+</article>
+</p>
+<p>
+Most model strucutres that we encounter in nature are cofibrantly generated, but this does not mean that there are none. The following model structure on $\textbf{Top}$ is such an example.
+</p>
+<p>
+<article class="env-proposition" id="">
+  <p><a class="environment-identifier">Proposition <span data-tag="">3.1.4</span> <span class="named">(<span class="cite">[Str72]</span>)</span>.</a> There is a model structure on the category $\textbf{Top}$ where a map $f \colon X \to Y$ is a: </p>
+  <p><ul>
+  <li>
+weak equivalence if it is a homotopy equivalence;
+</li><li>
+fibration if it is a Hurewicz fibration;
+</li><li>
+cofibration if it has the LLP with respect to all acyclic fibrations.
+</li>
+</ul></p>
+  <p> We will call this the <em>Str&#248;m model structure</em> and denote it $\textbf{Top}_{\mathrm{Str}}$. All objects in this model structure are bifibrant. </p>
+</article>
+</p>
+<p>
+<article class="env-proposition" id="">
+  <p><a class="environment-identifier">Proposition <span data-tag="">3.1.5</span> <span class="named">(<span class="cite">[<span class="postnote">Remark 4.7</span>, Rap10]</span>)</span>.</a> $\textbf{Top}_{\mathrm{Str}}$ is a not a cofibrantly generated model category. </p>
+</article>
+</p>
+<p>
+<article class="env-definition" id="000U">
+  <p><a class="environment-identifier">Definition <span data-tag="000U">3.1.6</span>.</a> A category $\mathcal{C}$ is <em>locally presentable</em> if: </p>
+  <p><ol>
+  <li>
+The category $\mathcal{C}$ admits all small colimits.
+</li><li>
+There exists a small set of objects $S$ which generate $\mathcal{C}$ under colimits.
+</li><li>
+Every object in $\mathcal{C}$ is small.
+</li><li>
+For any pair of objects $X,Y \in \mathcal{C}$, the object $\mathrm{Hom}(X,Y)$ is a set.
+</li>
+</ol></p>
+</article>
+</p>
+<p>
+<article class="env-definition" id="000V">
+  <p><a class="environment-identifier">Definition <span data-tag="000V">3.1.7</span>.</a> A model category $\mathcal{C}$ is <em>combinatorial</em> if it is cofibrantly generated and locally presentable. </p>
+</article>
+</p>
+<h2 id="a0000000007" class="tex-section"><span data-tag="">3.2</span> Right Transferred Model Structures</h2>
+<p>
+We suppose that $\mathcal{C}$ is a model category, and that we have an adjunction
+</p>
+<div class="equation">
+  \[ U : \mathcal{D} \leftrightarrows \mathcal{C} : F \]
+</div>
+<p>
+ such that $U$ is the right adjoint to $F$. We do not require that $\mathcal{D}$ have all small limits or colimits.
+</p>
+<p>
+<article class="env-definition" id="">
+  <p><a class="environment-identifier">Definition <span data-tag="">3.2.1</span>.</a> The <em>right transferred model structure</em> on $\mathcal{D}$ (if it exists) has $f \colon X \to Y$ a: </p>
+  <p><ul>
+  <li>
+weak equivalence if $U(f) \colon U(X) \to U(Y)$ is a weak equivalence in $\mathcal{C}$;
+</li><li>
+fibration if $U(f) \colon U(X) \to U(Y)$ is a fibration in $\mathcal{C}$;
+</li><li>
+cofibration if it has the LLP with respect to all acyclic fibrations.
+</li>
+</ul></p>
+  <p> Moreover the pair $F,U$ is a Quillen adjunction between these model structures. </p>
+</article>
+</p>
+<p>
+<article class="env-remark" id="">
+  <p><a class="environment-identifier">Remark <span data-tag="">3.2.2</span>.</a>Let $I$ and $J$ be the generating cofibrations and acyclic cofibrations of $\mathcal{C}$ then if the transferred model structure exists then under some mild assumptions (i.e., $F$ preserves small objects) we will see that $\mathcal{C}$ will have generating cofibrations $FI$ and generating acyclic cofibrations $FJ$. We will see in Proposition 3.2.4 that this style of thinking allows us to verify the existence of the model structure in quite a straightforward fashion. </p>
+</article>
+</p>
+<p>
+Let us call a morphism in $\mathcal{D}$ an anodyne morphism if it has the LLP with respect to all fibrations. For the model to exist the anodyne morphisms must coincide with the weak equivalences which are also cofibrations.
+</p>
+<p>
+<article class="env-theorem" id="000W">
+  <p><a class="environment-identifier">Theorem <span data-tag="000W">3.2.3</span> <span class="named">(<span class="cite">[<span class="postnote">Section II</span>, GJ99]</span>)</span>.</a> Let $\mathcal{C}$ and $\mathcal{D}$ be as above, then necessary and sufficient conditions for the existence of the right transferred model structure are: </p>
+  <p><ol>
+  <li>
+(Factorizations) Every morphism in $\mathcal{D}$ factors as a cofibration followed by an acyclic fibration, and as an anodyne morphism followed by a fibration.
+</li><li>
+(Acyclicity) Every anodyne morphism is a weak equivalence.
+</li>
+</ol></p>
+</article>
+</p>
+<p>
+In practice the two above conditions are hard to check. However, we can give more checkable conditions. In particular Proposition 3.2.4 is useful for checking the factorizations while Propositions 3.2.5 and 3.2.6 can be used to verify the acyclicity condition.
+</p>
+<p>
+<article class="env-proposition" id="000X">
+  <p><a class="environment-identifier">Proposition <span data-tag="000X">3.2.4</span>.</a> Suppose that </p>
+  <p><ol>
+  <li>
+$\mathcal{C}$ is cofibrantly generated;
+</li><li>
+$F$ preserves small objects (which follows if $U$ preserves filtered colimits);
+</li>
+</ol></p>
+  <p> then every morphism in $\mathcal{D}$ factors as a cofibration followed by an acyclic fibration, and as an anodyne morphism followed by a fibration. Moreover, if the transferred model structure exists on $\mathcal{D}$ then it is cofibrantly generated. The generating (acyclic) cofibrations are the images under $F$ of the generating (acyclic) cofibrations of $\mathcal{C}$. </p>
+</article>
+</p>
+<p>
+<article class="env-proposition" id="000Y">
+  <p><a class="environment-identifier">Proposition <span data-tag="000Y">3.2.5</span>.</a> If a sequential colimit of pushouts of images under $F$ of generating acyclic cofibrations is a weak equivalence in $\mathcal{D}$, then the anodyne morphisms are weak equivalences. </p>
+</article>
+</p>
+<p>
+<article class="env-proposition" id="000Z">
+  <p><a class="environment-identifier">Proposition <span data-tag="000Z">3.2.6</span> <span class="named">(<span class="cite">[<span class="postnote">Section II.4</span>, Qui67]</span>)</span>.</a> Let $\mathcal{C}$ and $\mathcal{D}$ as above, moreover suppose that </p>
+  <p><ol>
+  <li>
+$\mathcal{D}$ has a fibrant replacement functor (not necessarily functorial);
+</li><li>
+$\mathcal{D}$ has path objects for fibrant objects;
+</li>
+</ol></p>
+  <p> then the anodyne morphisms are weak equivalences. </p>
+</article>
+</p>
+<p>
+<article class="env-remark" id="">
+  <p><a class="environment-identifier">Remark <span data-tag="">3.2.7</span>.</a>The dual case of left transfer is much more complicated. This is in part due to the lack of fibrantly generated model structure, and the fact that one cannot easily identify a set of generating (acyclic) cofibrations. </p>
+</article>
+</p>
+<h2 id="a0000000001" class="tex-section"><span data-tag="">3.3</span> Examples</h2>
+<h3 id="a0000000004" class="tex-subsection"><span data-tag="">3.3.1</span> Functor Categories</h3>
+<p>
+<article class="env-proposition" id="">
+  <p><a class="environment-identifier">Proposition <span data-tag="">3.3.2</span> <span class="named">(<span class="cite">[<span class="postnote">Section 11.6</span>, Hir03]</span>)</span>.</a> Let $\mathcal{C}$ be a cofibrantly generated model category, and $\mathcal{D}$ a small category. We define the <em>projective</em> model structure, $\mathcal{C}^\mathcal {D}_\mathrm {proj}$, where a natural transformation $f \colon X \to Y$ is a: </p>
+  <p><ul>
+  <li>
+weak equivalence if it is an objectwise weak equivalence in $\mathcal{C}$;
+</li><li>
+fibration if it is an objectwise fibration in $\mathcal{C}$;
+</li><li>
+cofibration if it has the LLP with respect to all acyclic fibrations.
+</li>
+</ul></p>
+</article>
+</p>
+<p>
+<article class="env-proposition" id="">
+  <p><a class="environment-identifier">Proposition <span data-tag="">3.3.3</span>.</a>There is a model structure on the category of bisimplicial sets $\textbf{ssSet} = \textbf{sSet}^{\Delta ^{op}}$ where a morphism $f \colon X \to Y$ is a: </p>
+  <p><ul>
+  <li>
+weak equivalence if $f_ n \colon X_ n \to Y_ n$ is a weak equivalence in $\textbf{sSet}_{\mathrm{Kan}}$ for all $[n] \in \Delta $;
+</li><li>
+fibration if $f_ n \colon X_ n \to Y_ n$ is a fibration in $\textbf{sSet}_{\mathrm{Kan}}$ for all $[n] \in \Delta $;
+</li><li>
+cofibration if it has the LLP with respect to all acyclic fibrations.
+</li>
+</ul></p>
+  <p> We call this the <em>(Kan-Quillen) projective model structure</em> on $\textbf{ssSet}$ and denote it $\textbf{ssSet}_\mathrm {proj}$. </p>
+</article>
+</p>
+<h3 id="a0000000002" class="tex-subsection"><span data-tag="">3.3.4</span> The Thomason Model Structure</h3>
+<p>
+<article class="env-proposition" id="0010">
+  <p><a class="environment-identifier">Proposition <span data-tag="0010">3.3.5</span> <span class="named">(<span class="cite">[<span class="postnote">Section 3</span>, Tho80]</span>)</span>.</a> There is a cofibrantly generated  model structure on $\textbf{Cat}$ where a functor $F \colon \mathcal{C} \to \mathcal{D}$ is a: </p>
+  <p><ul>
+  <li>
+weak equivalence if $\text{Ex}^2\text{N}(F) \colon \text{Ex}^2\text{N}(\mathcal{C}) \to \text{Ex}^2\text{N}(\mathcal{D})$ is a weak equivalence in $\textbf{sSet}_\text {Kan}$.
+</li><li>
+fibration if $\text{Ex}^2\text{N}(F) \colon \text{Ex}^2\text{N}(\mathcal{C}) \to \text{Ex}^2\text{N}(\mathcal{D})$ is a fibration in $\textbf{sSet}_\text {Kan}$.
+</li><li>
+cofibration if it has the LLP with respect to all acyclic fibrations.
+</li>
+</ul></p>
+  <p> We call this model structure the <em>Thomason model structure on $\textbf{Cat}$</em> and denote it $\textbf{Cat}_\mathrm {Thom}$. </p>
+</article>
+</p>
+<p>
+<article class="env-remark" id="">
+  <p><a class="environment-identifier">Remark <span data-tag="">3.3.6</span>.</a>Although we have defined the weak equivalences to be those lifted against $\operatorname {Ex}^2N$, it should be noted that $\operatorname {Ex}^2N(F)$ is a weak equivalence in the Kan-Quillen model structure on $\textbf{sSet}$ if and only if $N$ is as there is a natural weak equivalence $\operatorname {id} \to \operatorname {Ex}^2$&#160;<span class="cite">[<span class="postnote">Lemma 3.7</span>, Ill72]</span>. The key reason we use the two-fold extension is to force the fibrant objects to be what we want. </p>
+</article>
+</p>
+<p>
+<article class="env-proposition" id="0011">
+  <p><a class="environment-identifier">Proposition <span data-tag="0011">3.3.7</span> <span class="named">(<span class="cite">[<span class="postnote">Section 3</span>, Tho80]</span>)</span>.</a> There is a Quillen equivalence </p>
+  <div class="equation">
+  \[ \tau _1 \operatorname {sd}^2 : \textbf{sSet}_{\mathrm{Kan}} \rightleftarrows \textbf{Cat}_{\mathrm{Thom}} : \operatorname {Ex}^2 N  \]
+</div>
+</article>
+</p>
+
+
+<h2 id="a0000000025" class="tex-section"><span data-tag="">3.4</span> References for Lecture 3</h2>
+
+
+<span class="cite">[GJ99]</span> Paul Goerss and John F. Jardine. Simplicial homotopy theory, volume 174 of <i>Progress in Mathematics</i>.  Birkhauser Verlag, Basel,1999.
+<br><br>
+
+<span class="cite">[Hir03]</span> Philip S. Hirschhorn. Model categories and their localizations, volume 99 of <i>Mathematical  Surveys and  Monographs</i>.  American Mathematical Society, Providence, RI,2003.
+<br><br>
+
+<span class="cite">[Hov99]</span> Mark Hovey. Model  categories, volume 63 of <i>Mathematical  Surveys and  Monographs</i>.  American Mathematical Society, Providence, RI,1999.
+<br><br>
+
+<span class="cite">[Ill72]</span> Luc Illusie. Complexe cotangent et deformations. II, volume 283 of <i>Lectures Notes in Mathematics</i>. Springer-Verlag, Berlin-New York, 1972.
+<br><br>
+
+<span class="cite">[Qui67]</span> Daneil G. Quillen. Homotopical Algebra, volume 43 of <i>Lecture Notes in Mathematics</i>.  Springer-Verlag, Berlin-New York, 1967.
+<br><br>
+
+<span class="cite">[Rap10]</span> George Raptis. Homotopy theory of posets. <i>Homology Homotopy Appl.</i>, 12(2):211-230, 2010.
+<br><br>
+
+<span class="cite">[Str72]</span> Arne Str&#248;m. The homotopy category is a homotopy category. <i>Arch. Math.</i>, 23:435-441, 1972.
+<br><br>
+
+<span class="cite">[Tho80]</span> R. W. Thomason. Cat as a closed model category. <i>Cahiers Topologie Geom. Differentielle</i>, 2(3):305-324, 1980.
+<br><br>
 
 </div>
 
