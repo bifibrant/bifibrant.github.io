@@ -60,7 +60,244 @@
   <h2>Video available <a href="https://youtu.be/-CSWl2V2XNg">here</a> (recording of the recap is missing, sorry!)</h2>
 
 
-<h2>Lectures notes to arrive soon!</h2>
+<h2 id="a0000000013" class="tex-section"><span data-tag="">4.1</span> Homotopy function complexes</h2>
+<p>
+<article class="env-definition" id="">
+  <p><a class="environment-identifier" >Definition <span data-tag="">4.1.1</span>.</a> Let $X$ be an object of a model category $\mathcal{C}$, we write $c X^\ast $ for the constant cosimplicial object at $X$ in $\textbf{cs}\mathcal{C}$ and $c X_\ast $ for the constant simplicial object at $X$ in $\textbf{s}\mathcal{C}$. </p>
+  <p><ol>
+  <li>
+A <em>cosimplicial resolution</em> of $X$ is an acyclic cofibration $A^\ast \to c X^\ast $ in the Reedy model structure on $\textbf{cs}\mathcal{C}$.
+</li><li>
+A <em>simplicial resolution</em> of $X$ is an acyclic fibration $c X_\ast \to A_\ast $ in the Reedy model structure on $\textbf{s}\mathcal{C}$.
+</li>
+</ol></p>
+</article>
+</p>
+<p>
+Under the assumption of factorial factorization, we can elevate this constructions to be functorial, that is, there is a cosimplicial resolution functor $r \colon \mathcal{C} \to \textbf{cs}\mathcal{C}$ and a simplicial resolution functor $\widetilde{r} \colon \mathcal{C} \to \textbf{s}\mathcal{C}$. The functorial choice of simplicial and cosimplicial resolutions is called a <em>framing</em>.
+</p>
+<p>
+<article class="env-definition" id="0013">
+  <p><a class="environment-identifier">Definition <span data-tag="0013">4.1.2</span>.</a>  Let $X,Y$ be objects in a model category, then we can form a bisimplicial set $\operatorname {Hom}(rX, \widetilde{r} Y)$. The diagonal of this bisimplicial set is a fibrant simplicial set in the Kan-Quillen model structure (i.e., a Kan complex) which we will denote $\operatorname {map}_\mathcal {C}(X,Y)$. We call this object the <em>homotopy function complex</em> from $X$ to $Y$. </p>
+</article>
+</p>
+<p>
+We have now formed a simplicial object which plays the role of the space of morphisms between objects in a model category. However, for it to make sense, it should have some relation to the set $[X,Y]$ (i.e., the equivalence class of morphisms from $X$ to $Y$ in $\operatorname {Ho}(\mathcal{C})$). The following result tells us that the relationship between these objects is perhaps the best one that could be hoped for.
+</p>
+<p>
+<article class="env-lemma" id="">
+  <p><a class="environment-identifier" >Lemma <span data-tag="">4.1.3</span> <span class="named">(<span class="cite">[<span class="postnote">Proposition 17.7.4</span>, Hir03]</span>)</span>.</a>  Let $X, Y$ be objects in a model category, then there is a bijection $[X,Y] \cong \pi _0 \operatorname {map}_\mathcal {C}(X,Y)$. </p>
+</article>
+</p>
+<h2 id="a0000000007" class="tex-section"><span data-tag="">4.2</span> Left Bousfield localization</h2>
+<p>
+<article class="env-definition" id="0014">
+  <p><a class="environment-identifier">Definition <span data-tag="0014">4.2.1</span>.</a>  A model category $\mathcal{C}$ is <em>left proper</em> if for every weak equivalence $A \to B$, and cofibration $A \to C$, the morphism $f$ in the following pushout is also a weak equivalence: </p>
+  <div class="equation">
+  \[  \xymatrix{ A \ar[r] \ar[d] &  C \ar[d]^-f \\  B \ar[r] &  P\rlap { .} }  \]
+</div>
+  <p> That is, weak equivalences are preserved by forming pushouts along cofibrations. </p>
+</article>
+</p>
+<p>
+<article class="env-definition" id="0015">
+  <p><a class="environment-identifier">Definition <span data-tag="0015">4.2.2</span>.</a>  Let $\mathcal{C}$ be a model category and $S$ be a set of morphisms in $\mathcal{C}$. </p>
+  <p><ul>
+  <li>
+An object $Z \in \mathcal{C}$ is said to be <em>$S$-local</em> if
+</p>
+<div class="equation">
+  \[ \mathrm{map}_{\mathcal{C}}(s,Z) \colon \mathrm{map}_{\mathcal{C}}(B,Z) \to \mathrm{map}_{\mathcal{C}}(A,Z) \]
+</div>
+<p>
+ is a weak equivalence in $\textbf{sSet}_{\mathrm{Kan}}$ for all $s \colon A \to B$ in $S$.
+</li><li>
+A morphism $f \colon X \to Y$ in $\mathcal{C}$ is an <em>$S$-equivalence</em> if
+</p>
+<div class="equation">
+  \[ \mathrm{map}_{\mathcal{C}}(f,Z) \colon \mathrm{map}_{\mathcal{C}}(Y,Z) \to \mathrm{map}_{\mathcal{C}}(X,Z) \]
+</div>
+<p>
+ is a weak equivalence in $\textbf{sSet}_{\mathrm{Kan}}$ for all $S$-local objects $Z \in \mathcal{C}$.
+</li><li>
+An object $W \in \mathcal{C}$ is <em>$S$-acyclic</em> if $\mathrm{map}_{\mathcal{C}}(W,Z) \simeq \ast $ in $\textbf{sSet}_{\mathrm{Kan}}$ for all $S$-local objects $Z \in \mathcal{C}$.
+</li>
+</ul></p>
+</article>
+</p>
+<p>
+<article class="env-definition" id="">
+  <p><a class="environment-identifier" >Definition <span data-tag="">4.2.3</span>.</a> A <em>left Bousfield localization</em> of a model category $\mathcal{C}$ with respect to a set of morphisms $S$, if it exists, is a new model structure $L_{S}\mathcal{C}$ on the underlying category of $\mathcal{C}$ such that the: </p>
+  <p><ul>
+  <li>
+weak equivalences of $L_ S \mathcal{C}$ are the $S$-equivalences;
+</li><li>
+fibrations of $L_ S \mathcal{C}$ are those morphisms with the RLP with respect to the cofibrations which are also $S$-equivalences (i.e., the acyclic cofibrations of $L_ S \mathcal{C}$);
+</li><li>
+cofibrations of $L_ S \mathcal{C}$ are the cofibrations of $\mathcal{C}$.
+</li>
+</ul></p>
+</article>
+</p>
+<p>
+<article class="env-proposition" id="">
+  <p><a class="environment-identifier" >Proposition <span data-tag="">4.2.4</span> <span class="named">(<span class="cite">[<span class="postnote">Theorem 4.1.1</span>, Hir03]</span>)</span>.</a>  If $\mathcal{C}$ is a cellular left proper model category, then Bousfield localizations exist at any set of morphisms $S$. Moreover, the localized model structure is left proper and cellular. </p>
+</article>
+</p>
+<p>
+<article class="env-proposition" id="0016">
+  <p><a class="environment-identifier">Proposition <span data-tag="0016">4.2.5</span> <span class="named">(<span class="cite">[<span class="postnote">Proposition A.3.7.3</span>, Lur09]</span>)</span>.</a>  If $\mathcal{C}$ is a combinatorial left proper model category, then Bousfield localizations exist at any set of morphisms $S$. Moreover, the localized model structure is left proper and combinatorial. </p>
+</article>
+</p>
+<p>
+<article class="env-remark" id="">
+  <p><a class="environment-identifier" >Remark <span data-tag="">4.2.6</span>.</a> In a left Bousfield localization we have no control over the generating acyclic cofibrations. As such, it is not clear that the localized model should should remain cofibrantly generated. The fact that a suitable set of generating acyclic cofibrations can be found in the localized model structure is rather technical, and we refer to&#160;<span class="cite">[<span class="postnote">Section 4.5</span>, Hir03]</span> for specific details. </p>
+</article>
+</p>
+<p>
+<article class="env-proposition" id="">
+  <p><a class="environment-identifier" >Proposition <span data-tag="">4.2.7</span> <span class="named">(<span class="cite">[<span class="postnote">Proposition 3.3.4</span>, Hir03]</span>)</span>.</a>  Let $L_ S \mathcal{C}$ be a left Bousfield localization of a model structure $\mathcal{C}$, then the identity functor $\operatorname {id}_{\mathcal{C}} \colon \mathcal{C} \to L_ S \mathcal{C}$ is a left Quillen functor. </p>
+</article>
+</p>
+<p>
+The $S$-local objects should not behave too differently in the localized model structure than in the original model structure. The following results tell us that left Bousfield localizations do not change the weak equivalences or the fibrations between the $S$-local objects.
+</p>
+<p>
+<article class="env-proposition" id="0017">
+  <p><a class="environment-identifier">Proposition <span data-tag="0017">4.2.8</span> <span class="named">(<span class="cite">[<span class="postnote">Section 3.3.17</span>, Hir03]</span>)</span>.</a>  The $S$-local weak equivalences between $S$-local fibrant objects are exactly the original weak equivalences in $\mathcal{C}$. </p>
+</article>
+</p>
+<p>
+<article class="env-proposition" id="">
+  <p><a class="environment-identifier" >Proposition <span data-tag="">4.2.9</span> <span class="named">(<span class="cite">[<span class="postnote">Proposition 3.3.16</span>, Hir03]</span>)</span>.</a>  The $S$-local fibrations between $S$-local objects coincide with the original fibrations. </p>
+</article>
+</p>
+<h2 id="a0000000004" class="tex-section"><span data-tag="">4.3</span> A non-example</h2>
+<p>
+In this section we give an example constructed by Barton which demonstrates that left properness is essential for taking left Bousfield localizations&#160;<span class="cite">[MOF]</span>.
+</p>
+<p>
+The model category in question is constructed by first considering the following diagram:
+</p>
+<div class="equation">
+  \[ \xymatrix{ a  \ar[d] \ar[r] &  b \\  c \ar[r] &  d \ar@{<-}[u]} \]
+</div>
+<p>
+ such that the morphism $a \to b$ is a weak equivalence and $a \to c$ is a cofibration. As we do not want the model structure to be left proper, we do not want the morphism $c \to d$ to be a weak equivalence. As such $a \to c$ cannot be a weak equivalence either as this would force $b \to d$ to be a weak equivalence also.
+</p>
+<p>
+As the morphisms $a \to c$ and $c \to d$ are not weak equivalences, they must be both fibrations and cofibrations. It follows that the morphism $a \to d$ is also both a fibration and a cofibration. As such, $a \to d$ cannot be a weak equivalence as this would imply it is an isomorphism (as it would be a morphism which is in all three classes).
+</p>
+<p>
+Therefore, by 2-out-of-3 the morphism $b \to d$ cannot be a weak equivalence, and is therefore a fibration. We summarize this discussion in the following result.
+</p>
+<p>
+<article class="env-lemma" id="">
+  <p><a class="environment-identifier" >Lemma <span data-tag="">4.3.1</span>.</a> There is a combinatorial, non-left proper model structure on the above diagram where a morphism is a: </p>
+  <p><ul>
+  <li>
+weak equivalence if it is the morphism $a \to b$;
+</li><li>
+fibration if it is any morphism;
+</li><li>
+cofibration if it is one of the morphisms $a \to c$, $b \to d$ or $c \to d$.
+</li>
+</ul></p>
+  <p> Let us denote this model structure $\mathcal{C}_{\mathrm{Barton}}$. </p>
+</article>
+</p>
+<p>
+We would now like to take a left Bousfield localization of this model structure at the single morphism $a \to c$ which is a cofibration between cofibrant objects. That is, we want to see if $L_{a \to c} \mathcal{C}_{\mathrm{Barton}}$ is a model category or not.
+</p>
+<p>
+All objects are fibrant in $ \mathcal{C}_{\mathrm{Barton}}$, and the local objects with respect to the morphism $a \to c$ are $c$ and $d$. As $S$-local equivalences between $S$-local objects are just the original weak equivalences, this implies that $c \to d$ is not a weak equivalence in $L_{a \to c} \mathcal{C}_{\mathrm{Barton}}$ as it was not a weak equivalence in $\mathcal{C}_{\mathrm{Barton}}$.
+</p>
+<p>
+However, as we have $a \to c$ a weak equivalence in the localization, this forces the morphism $b \to d$ to be a weak equivalence as it the pushout of an acyclic cofibration. However, this clearly contradicts the 2-out-of-3 property and therefore the required model structure does not exist.
+</p>
+<p>
+<article class="env-corollary" id="">
+  <p><a class="environment-identifier" >Corollary <span data-tag="">4.3.2</span>.</a> The left Bousfield localization of $\mathcal{C}_{\mathrm{Barton}}$ at the morphism $a \to c$ is not a model category. </p>
+</article>
+</p>
+<h2 id="a0000000001" class="tex-section"><span data-tag="">4.4</span> Postnikov Towers</h2>
+<p>
+<article class="env-definition" id="0018">
+  <p><a class="environment-identifier">Definition <span data-tag="0018">4.4.1</span>.</a> </p>
+  <p><ul>
+  <li>
+Let $n \geq 0$, then we say that a Kan complex $X$ is an <em>$n$-type</em> if $\pi _ m(X,x)$ is trivial for all base points $x \in X_0$ for all $m > n$.
+</li><li>
+A Kan complex is a <em>$(-2)$-type</em> if it is contractible, that is, the unique morphism $X \to \Delta [0]$ is a homotopy equivalence.
+</li><li>
+A Kan complex is a <em>$(-1)$-type</em> if it is either empty or contractible.
+</li>
+</ul></p>
+</article>
+</p>
+<p>
+To be able to form a model structure where the $n$-types are the fibrant objects, it is useful to have the following characterization which provides a lifting criterion.
+</p>
+<p>
+<article class="env-lemma" id="">
+  <p><a class="environment-identifier" >Lemma <span data-tag="">4.4.2</span> <span class="named">(<span class="cite">[<span class="postnote">Proposition 2.5</span>, CL19]</span>)</span>.</a>  Let $n \geq -2$, then a Kan complex is an $n$-type if and only if it has the right lifting property with respect to the boundary inclusions $\partial \Delta [m] \hookrightarrow \Delta [m]$ for every $m \geq n+2$. </p>
+</article>
+</p>
+<p>
+<article class="env-definition" id="">
+  <p><a class="environment-identifier" >Definition <span data-tag="">4.4.3</span>.</a> Let $n \geq 0$, then a morphism $f \colon X \to Y$ of simplicial sets is a <em>homotopy $n$-equivalence</em> if: </p>
+  <p><ol>
+  <li>
+the induced map $\pi _0(f) \colon \pi _0 (X) \to \pi _0 (Y)$ is a bijection;
+</li><li>
+the induced map $\pi _ k(f) \colon \pi _ k(X,x) \to \pi _ k(Y,fx)$ is a bijection for every $1 \leq k \leq n$ and for every $x \in X_0$.
+</li>
+</ol></p>
+</article>
+</p>
+<p>
+<article class="env-proposition" id="0019">
+  <p><a class="environment-identifier">Proposition <span data-tag="0019">4.4.4</span> <span class="named">(<span class="cite">[<span class="postnote">Section 9.2</span>, Cis06]</span>)</span>.</a>  For each $n \geq -2$, there is a model structure on $\textbf{sSet}$ where a morphism $f \colon X \to Y$ is a: </p>
+  <p><ul>
+  <li>
+weak equivalence if it is a homotopy $n$-equivalence;
+</li><li>
+fibration if it has the RLP with respect to all acyclic cofibrations;
+</li><li>
+cofibration if it is a monomorphism.
+</li>
+</ul></p>
+  <p> We will call this model structure the <em>$n$-truncated Kan-Quillen model structure</em> and denote it $\textbf{sSet}_\mathrm {Kan}^{\leq n}$. The fibrant objects of this model are exactly the $n$-types. </p>
+</article>
+</p>
+<p>
+<article class="env-proposition" id="001A">
+  <p><a class="environment-identifier">Proposition <span data-tag="001A">4.4.5</span> <span class="named">(<span class="cite">[<span class="postnote">Section 9.2</span>, Cis06]</span>)</span>.</a>  The model structure $\textbf{sSet}_{Kan}^{\leq n}$ is the left Bousfield localization of $\textbf{sSet}_{Kan}$ at the boundary inclusion $\partial \Delta [n+2] \hookrightarrow \Delta [n+2]$. </p>
+</article> There is a diagram of left Quillen functors given by the identity functor
+</p>
+<div class="equation">
+  \[ \cdots \to \textbf{sSet}_{Kan}^{\leq 2} \to \textbf{sSet}_{Kan}^{\leq 1} \to \textbf{sSet}_{Kan}^{\leq 0}. \]
+</div>
+
+
+
+<h2 id="a0000000025" class="tex-section"><span data-tag="">3.4</span> References for Lecture 3</h2>
+
+
+<span class="cite">[Cis06]</span> Denis-Charles Cisinski. Les prefaisceaux comme modeles des types d'homotopie, volume 308 of <i>Asterisque</i>. 2006.
+<br><br>
+
+<span class="cite">[CL19]</span> Alexander Campbell and Edoardo Lanari. On truncated quasi-categories. <i>Cahiers de Topol. Geom. Differ. Categ.</i>, 61(2):154-207, 2020.
+<br><br>
+
+<span class="cite">[Hir03]</span> Philip S. Hirschhorn. Model categories and their localizations, volume 99 of <i>Mathematical  Surveys and  Monographs</i>.  American Mathematical Society, Providence, RI,2003.
+<br><br>
+
+<span class="cite">[Lur09]</span> Jacob Lurie. Higher Topos Theory, volume 170 of <i>Annals of Mathematics Studies</i>.  Princeton University Press, Princeton NJ, 2009.
+<br><br>
+
+<span class="cite">[MOF]</span> <a href="https://mathoverflow.net/questions/325383/counter-example-to-the-existence-of-left-bousfield-localization-of-combinatorial">Counter-example to the existence of left Bousfield localization of combinatorial model category</a>. MathOverflow.
+<br><br>
 
 </div>
 
