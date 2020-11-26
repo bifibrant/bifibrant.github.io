@@ -1,0 +1,232 @@
+<!DOCTYPE HTML>
+<html>
+
+<link href="//fonts.googleapis.com/css?family=Poiret+One" rel='stylesheet' type='text/css'>
+<link href="//fonts.googleapis.com/css?family=Roboto" rel='stylesheet' type='text/css'>
+
+
+<link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico">
+<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="favicon.ico">
+
+<link rel="stylesheet" href="style.css">
+
+
+<head>
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ['tex2jax.js'],
+    jax: ['input/TeX','output/HTML-CSS'],
+    TeX: {
+      extensions: ['AMSmath.js', 'AMSsymbols.js', '/static/XyJax/extensions/TeX/xypic.js'],
+      Macros: {
+        linebreak: ["", 1, ""],
+        },
+      TagSide: 'left'
+    },
+    tex2jax: {
+      inlineMath: [['$','$']],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+    },
+    'HTML-CSS': { scale: 100 }
+  });
+</script>
+
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js"></script>
+
+
+
+        <title>Scott Balchin</title>
+    </head>
+
+    <body>
+
+    <div class="hero-image2">
+    </div>
+
+<div id="navbar">
+  <a class="active" href="bifibrant.html">Lectures</a>
+  <a href="admin.html">Administrative</a>
+  <a href="index.html">Home</a>
+</div>
+
+<div class="content" style="padding-left: 60px; padding-right: 60px">
+
+  <h1 id="chapter-second">Lecture 5</h1>
+
+  <h2>Slides available <a href="Lecture 5.pdf">here</a></h2>
+  
+  <h2>Video available <a href="https://youtu.be/5q8LZ27p2_0">here</a></h2>
+
+
+<h2 id="a0000000011" class="tex-section"><span data-tag="">5.1</span> Monoidal model categories</h2>
+<p>
+<article class="env-definition" id="001C">
+  <p><a class="environment-identifier">Definition <span data-tag="001C">5.1.1</span>.</a> A <em>symmetric monoidal model category</em> is a model category $\mathcal{C}$ equipped with a closed symmetric monoidal structure $(\mathcal{C}, \otimes , \mathbb {I})$ such that the two following compatibility conditions are satisfied: </p>
+  <p><ol>
+  <li>
+(Pushout-product axiom) For every pair of cofibrations $f \colon X \to Y$ and $f' \colon X' \to Y'$, their <em>pushout-product</em>
+</p>
+<div class="equation">
+  \[ f \square f' \colon (X \otimes Y') \coprod _{X \otimes X'} (Y \otimes X')\to Y \otimes Y' \]
+</div>
+<p>
+ is also a cofibration. Moreover, it is a acyclic cofibration if either $f$ or $f'$ is.
+</li><li>
+(Unit axiom) For every cofibrant object $X$ and every cofibrant resolution $\emptyset \hookrightarrow Q\mathbb {I} \to \mathbb {I}$ of the tensor unit, the induced morphism $Q \mathbb {I} \otimes X \to \mathbb {I} \otimes X$ is a weak equivalence.
+</li>
+</ol></p>
+</article>
+</p>
+<p>
+<article class="env-remark" id="">
+  <p><a class="environment-identifier">Remark <span data-tag="">5.1.2</span>.</a>The pushout-product axiom appearing above is equivalent to asking that the tensor product $\otimes \colon \mathcal{C} \times \mathcal{C} \to \mathcal{C}$ is a Quillen bifunctor. We also highlight that if the model category is cofibrantly generated then it is enough by&#160;<span class="cite">[<span class="postnote">Proposition 4.2.5</span>, Hov99]</span> to just check the pushout-product axiom on the generating sets of cofibrations and acyclic cofibrations. </p>
+</article>
+</p>
+<p>
+<article class="env-proposition" id="">
+  <p><a class="environment-identifier">Proposition <span data-tag="">5.1.3</span> <span class="named">(<span class="cite">[<span class="postnote">Theorem 4.3.2</span>, Hov99]</span>)</span>.</a> Let $\mathcal{C}$ be a symmetric monoidal model category, then $\operatorname {Ho}(\mathcal{C})$ can be given the structure of a closed symmetric monoidal category with tensor structure $(\otimes ^{\mathbb {L}}, R \mathbb {I})$, with $R \mathbb {I}$ the fibrant replacement of the tensor unit in $\mathcal{C}$. </p>
+</article>
+</p>
+<h2 id="a0000000008" class="tex-section"><span data-tag="">5.2</span> Chain complexes</h2>
+<p>
+<article class="env-lemma" id="">
+  <p><a class="environment-identifier">Lemma <span data-tag="">5.2.1</span> <span class="named">(<span class="cite">[<span class="postnote">Proposition 4.2.13</span>, Hov99]</span>)</span>.</a> Let $R$ be a commutative ring, then the projective model structure on $\textbf{Ch}(R)$ is a monoidal model category. </p>
+</article>
+</p>
+<p>
+<article class="env-example" id="">
+  <p><a class="environment-identifier">Example <span data-tag="">5.2.2</span>.</a>For $R$ a commutative ring, the injective model structure need not be a monoidal model category in general. Take $R=\mathbb {Z}$ and equip $\textbf{Ch}(\mathbb {Z})$ with the injective model structure. There there are injective cofibrations $\mathbb {Z} \to \mathbb {Q}$ and $0 \to \mathbb {Z}/2 \mathbb {Z}$. The pushout-product of these morphism is the morphism $\mathbb {Z}/2 \mathbb {Z} \to 0$ which is not an injective cofibration. As such, $\textbf{Ch}(\mathbb {Z})_\mathrm {inj}$ is not a monoidal model category. </p>
+</article>
+</p>
+<p>
+<article class="env-lemma" id="001D">
+  <p><a class="environment-identifier">Lemma <span data-tag="001D">5.2.3</span>.</a> Let $R$ be a ring, then the identity functor is a Quillen equivalence: </p>
+  <div class="equation">
+  \[  \operatorname {id} : \textbf{Ch}(R)_{\mathrm{proj}} \rightleftarrows \textbf{Ch}(R)_{\mathrm{inj}} :\operatorname {id}.  \]
+</div>
+</article>
+</p>
+<p>
+Note that in particular the above result demonstrates that Quillen equivalent models on the same underlying category need not share the same properties, the projective model can be monoidal while the injective is not.
+</p>
+<h2 id="a0000000003" class="tex-section"><span data-tag="">5.3</span> Arrow categories</h2>
+<p>
+We now give an example of two separate monoidal structures on a given category, each of which is part of a monoidal model structure.
+</p>
+<p>
+<article class="env-definition" id="">
+  <p><a class="environment-identifier">Definition <span data-tag="">5.3.1</span>.</a>Let $\mathcal{C}$ be a small category. Then its <em>arrow category</em> $\textbf{Arr}(\mathcal{C})$ is the functor category $\mathcal{C}^ I$. That is, the objects in the arrow category are the morphisms in $\mathcal{C}$ and a morphism $\alpha \colon f \to g$ is a commuting square </p>
+  <div class="equation">
+  \[ \xymatrix{ X_0 \ar[r]^{\alpha _0} \ar[d]_{f} & Y_0 \ar[d]^{g} \\  X_1 \ar[r]_{\alpha _1} &  Y_1 } \]
+</div>
+  <p> in $\mathcal{C}$. We will write $\operatorname {Ev}_ i\alpha = \alpha _ i$ for $i \in \{ 0,1\} $. </p>
+</article>
+</p>
+<p>
+<article class="env-definition" id="">
+  <p><a class="environment-identifier">Definition <span data-tag="">5.3.2</span>.</a>Suppose that $\mathcal{C}$ carries a symmetric monoidal structure $(\otimes , \mathbb {I})$. </p>
+  <p><ul>
+  <li>
+The <em>tensor product monoidal structure</em> on $\textbf{Arr}(\mathcal{C})$ is defined as
+</p>
+<div class="equation">
+  \[ X_0 \otimes Y_0 \xrightarrow {f \otimes g} X_1 \otimes Y_1 \]
+</div>
+<p>
+ for morphisms $f \colon X_0 \to X_1$ and $g \colon Y_0 \to Y_1$. The monoidal unit in this structure is $\mathbb {I} \to \mathbb {I}$.
+</li><li>
+The <em>pushout-product monoidal structure</em> on $\textbf{Arr}(\mathcal{C})$ is defined by the pushout-product
+</p>
+<div class="equation">
+  \[  (X_0 \otimes Y_1) \coprod _{X_0 \otimes Y_0} (X_1 \otimes Y_0) \xrightarrow {f \square g} X_1 \otimes Y_1  \]
+</div>
+<p>
+ for morphisms $f \colon X_0 \to X_1$ and $g \colon Y_0 \to Y_1$. The monoidal unit in this structure is $\emptyset \to \mathbb {I}$.
+</li>
+</ul></p>
+</article>
+</p>
+<p>
+As we have a functor category, we can equip it with both he projective and injective model structures.
+</p>
+<p>
+<article class="env-proposition" id="">
+  <p><a class="environment-identifier">Proposition <span data-tag="">5.3.3</span> <span class="named">(<span class="cite">[<span class="postnote">Proposition 2.2</span>, Hov14]</span>)</span>.</a> Let $\mathcal{C}$ be a symmetric monoidal model category. Then $\textbf{Arr}(\mathcal{C})_{\mathrm{inj}}$ is a symmetric monoidal model category with respect to the tensor product monoidal structure and moreover satisfies the monoid axiom if $\mathcal{C}$ does. </p>
+</article>
+</p>
+<p>
+<article class="env-proposition" id="">
+  <p><a class="environment-identifier">Proposition <span data-tag="">5.3.4</span> <span class="named">(<span class="cite">[<span class="postnote">Proposition 2.2</span>, WY19]</span>)</span>.</a> Let $\mathcal{C}$ be a symmetric monoidal model category. Then $\textbf{Arr}(\mathcal{C})_{\mathrm{proj}}$ is a symmetric monoidal model category with respect to the pushout-product monoidal structure and moreover satisfies the monoid axiom if $\mathcal{C}$ does. </p>
+</article>
+</p>
+<h2 id="a0000000001" class="tex-section"><span data-tag="">5.4</span> Preservation under left Bousfield localization</h2>
+<p>
+Left Bousfield localization does not always preserve the property of being a monoidal model category as the next example will show.
+</p>
+<p>
+<article class="env-proposition" id="001E">
+  <p><a class="environment-identifier">Proposition <span data-tag="001E">5.4.1</span> <span class="named">(<span class="cite">[<span class="postnote">Proposition 4.2.15</span>, Hov99]</span>)</span>.</a> Let $F$ be a Frobenius ring which is also a finite-dimensional Hopf algebra over some field $k$, then $R \textbf{-Mod}_{\mathrm{st}}$ is a monoidal model category with monoidal structure $M \otimes _ k N$ and $R$ acts via the diagonal $R \to R \otimes _ k R$. The monoidal structure is symmetric if and only if $R$ is cocommutative. </p>
+</article>
+</p>
+<p>
+<article class="env-example" id="">
+  <p><a class="environment-identifier">Example <span data-tag="">5.4.2</span> <span class="named">(<span class="cite">[<span class="postnote">Example 4.1</span>, Whi18]</span>)</span>.</a> Let $R = \mathbb {F}_2[\Sigma _3]$, then an $R$-module is an $\mathbb {F}_2$-vector space along with an action of the symmetric group $\Sigma _3$. The ring $R$ is a Hopf algebra over the field $\mathbb {F}_2$, and therefore $R \textbf{-Mod}_{\mathrm{st}}$ is a monoidal model category. </p>
+  <p>We shall localize $R \textbf{-Mod}_{\mathrm{st}}$ with respect to the morphism $f \colon 0 \to \mathbb {F}_2$ where the codomain has a trivial $\Sigma _3$-action. We will now demonstrate that $L_ f R \textbf{-Mod}_{\mathrm{st}}$ cannot be monoidal. </p>
+  <p>An object will be $f$-trivial if and only if it has no $\Sigma _3$-fixed points if and only if it does not admit $\Sigma _3$-equivariant morphisms from $\mathbb {F}_2$. </p>
+  <p>To show that the pushout-product axiom fails in $L_ f R \textbf{-Mod}_{\mathrm{st}}$ it is enough to find an $f$-locally trivial object $N$ such that $N \otimes _{\mathbb {F}_2} N$ is not $f$-locally trivial. We let $N \cong \mathbb {F}_2 \oplus \mathbb {F}_2$ where the element $(12) \in \Sigma _3$ sends $a= (1,0)$ to $b = (0,1)$ and the element $(123) \in \Sigma _3$ sends $a$ to $b$ and $b$ to $c=a+b$ which equips $N$ with a $\Sigma _3$-action. As this $\Sigma _3$-action has no fixed points, the object $N$ is $f$-locally trivial. </p>
+  <p>However the object $N \otimes _{\mathbb {F}_2} N$ has a $\Sigma _3$-invariant element $a \otimes a + b \otimes b + c \otimes c$. As such, $L_ f R \textbf{-Mod}_{\mathrm{st}}$ is not a monoidal model category as required. </p>
+</article>
+</p>
+<p>
+We can now look at one such condition of when left Bousfield localization does preserve structure that we care about.
+</p>
+<p>
+<article class="env-definition" id="001F">
+  <p><a class="environment-identifier">Definition <span data-tag="001F">5.4.3</span>.</a> Let $\mathcal{C}$ be a monoidal model category, then we say that a cofibrant object $X \in \mathcal{C}$ is <em>flat</em> if $f \otimes X$ is a weak equivalence whenever $f$ is a weak equivalence.</p>
+</article>
+</p>
+<p>
+<article class="env-proposition" id="001G">
+  <p><a class="environment-identifier">Proposition <span data-tag="001G">5.4.4</span> <span class="named">(<span class="cite">[<span class="postnote">Theorem 4.6</span>, Whi18]</span>)</span>.</a> Let $\mathcal{C}$ be a cofibrantly generated monoidal model category in which all cofibrant objects are flat, then a left Bousfield localization $L_ S \mathcal{C}$ is a monoidal Bousfield localization if and only if every morphism of the form $f \otimes \mathrm{id}_ K$ is $S$-local where $f \in S$ and $K$ cofibrant. </p>
+  <p>Moreover, If the domains of the generating cofibrations $I$ happen to be cofibrant then it suffices to only check this condition where $K$ is in the set of domains and codomains of $I$. </p>
+</article>
+</p>
+
+
+<h2 id="a0000000025" class="tex-section"><span data-tag="">5.5</span> References for Lecture 5</h2>
+
+<span class="cite">[Hov99]</span> Mark Hovey. Model  categories, volume 63 of <i>Mathematical  Surveys and  Monographs</i>.  American Mathematical Society, Providence, RI,1999.
+<br><br>
+
+<span class="cite">[Hov14]</span> Mark Hovey. Smith ideals of structured ring spectra. <i>arXiv:1401.2850</i>, 2014.
+<br><br>
+
+<span class="cite">[Whi18]</span> D. White. Monoidal Bousfield localizations and algebras over operads. <i>arXiv:1404.5197</i>, 2018.
+<br><br>
+
+<span class="cite">[WY19]</span> D. White and Donald Yau. Arrow categories of monoidal model categories. <i>Math, Scand.</i>, 125(2):185-198, 2019.
+<br><br>
+
+</div>
+
+<script>
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>
+
+    </body>
+</html>
+
+
